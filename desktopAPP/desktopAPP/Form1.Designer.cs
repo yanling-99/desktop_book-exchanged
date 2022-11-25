@@ -31,10 +31,17 @@
             this.components = new System.ComponentModel.Container();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.fillBy3ToolStrip = new System.Windows.Forms.ToolStrip();
+            this.regionIDToolStripLabel = new System.Windows.Forms.ToolStripLabel();
+            this.regionIDToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
+            this.fillBy3ToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.regionDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.regionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.product_Search_DataSet = new desktopAPP.Product_Search_DataSet();
             this.fillBy2ToolStrip = new System.Windows.Forms.ToolStrip();
@@ -54,27 +61,21 @@
             this.titleKeywordToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
             this.fillByToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.productDataGridView = new System.Windows.Forms.DataGridView();
-            this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.productTableAdapter = new desktopAPP.Product_Search_DataSetTableAdapters.ProductTableAdapter();
-            this.tableAdapterManager = new desktopAPP.Product_Search_DataSetTableAdapters.TableAdapterManager();
-            this.paymentTypeTableAdapter = new desktopAPP.Product_Search_DataSetTableAdapters.PaymentTypeTableAdapter();
-            this.regionTableAdapter = new desktopAPP.Product_Search_DataSetTableAdapters.RegionTableAdapter();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fillBy3ToolStrip = new System.Windows.Forms.ToolStrip();
-            this.regionIDToolStripLabel = new System.Windows.Forms.ToolStripLabel();
-            this.regionIDToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
-            this.fillBy3ToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.productTableAdapter = new desktopAPP.Product_Search_DataSetTableAdapters.ProductTableAdapter();
+            this.tableAdapterManager = new desktopAPP.Product_Search_DataSetTableAdapters.TableAdapterManager();
+            this.paymentTypeTableAdapter = new desktopAPP.Product_Search_DataSetTableAdapters.PaymentTypeTableAdapter();
+            this.regionTableAdapter = new desktopAPP.Product_Search_DataSetTableAdapters.RegionTableAdapter();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.fillBy3ToolStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.regionDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.regionBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.product_Search_DataSet)).BeginInit();
@@ -85,7 +86,6 @@
             this.fillByToolStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.productDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
-            this.fillBy3ToolStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -122,9 +122,44 @@
             this.tabPage1.UseVisualStyleBackColor = true;
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
+            // fillBy3ToolStrip
+            // 
+            this.fillBy3ToolStrip.BackColor = System.Drawing.SystemColors.Info;
+            this.fillBy3ToolStrip.Dock = System.Windows.Forms.DockStyle.None;
+            this.fillBy3ToolStrip.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fillBy3ToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.regionIDToolStripLabel,
+            this.regionIDToolStripTextBox,
+            this.fillBy3ToolStripButton});
+            this.fillBy3ToolStrip.Location = new System.Drawing.Point(3, 28);
+            this.fillBy3ToolStrip.Name = "fillBy3ToolStrip";
+            this.fillBy3ToolStrip.Size = new System.Drawing.Size(254, 25);
+            this.fillBy3ToolStrip.TabIndex = 1;
+            this.fillBy3ToolStrip.Text = "fillBy3ToolStrip";
+            // 
+            // regionIDToolStripLabel
+            // 
+            this.regionIDToolStripLabel.Name = "regionIDToolStripLabel";
+            this.regionIDToolStripLabel.Size = new System.Drawing.Size(80, 22);
+            this.regionIDToolStripLabel.Text = "regionID:";
+            // 
+            // regionIDToolStripTextBox
+            // 
+            this.regionIDToolStripTextBox.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9F);
+            this.regionIDToolStripTextBox.Name = "regionIDToolStripTextBox";
+            this.regionIDToolStripTextBox.Size = new System.Drawing.Size(100, 25);
+            // 
+            // fillBy3ToolStripButton
+            // 
+            this.fillBy3ToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.fillBy3ToolStripButton.Name = "fillBy3ToolStripButton";
+            this.fillBy3ToolStripButton.Size = new System.Drawing.Size(60, 22);
+            this.fillBy3ToolStripButton.Text = "Search";
+            this.fillBy3ToolStripButton.ToolTipText = "FillBy3";
+            this.fillBy3ToolStripButton.Click += new System.EventHandler(this.fillBy3ToolStripButton_Click);
+            // 
             // label3
             // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Bisque;
             this.label3.Location = new System.Drawing.Point(43, 75);
@@ -173,6 +208,26 @@
             this.regionDataGridView.Size = new System.Drawing.Size(670, 196);
             this.regionDataGridView.TabIndex = 5;
             // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "id";
+            this.dataGridViewTextBoxColumn9.HeaderText = "regionID";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "country";
+            this.dataGridViewTextBoxColumn10.HeaderText = "country";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            // 
+            // dataGridViewTextBoxColumn11
+            // 
+            this.dataGridViewTextBoxColumn11.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn11.DataPropertyName = "location";
+            this.dataGridViewTextBoxColumn11.HeaderText = "location";
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            // 
             // regionBindingSource
             // 
             this.regionBindingSource.DataMember = "Region";
@@ -194,18 +249,19 @@
             this.fillBy2ToolStripButton});
             this.fillBy2ToolStrip.Location = new System.Drawing.Point(402, 3);
             this.fillBy2ToolStrip.Name = "fillBy2ToolStrip";
-            this.fillBy2ToolStrip.Size = new System.Drawing.Size(278, 25);
+            this.fillBy2ToolStrip.Size = new System.Drawing.Size(262, 25);
             this.fillBy2ToolStrip.TabIndex = 1;
             this.fillBy2ToolStrip.Text = "fillBy2ToolStrip";
             // 
             // paymentTypeToolStripLabel
             // 
             this.paymentTypeToolStripLabel.Name = "paymentTypeToolStripLabel";
-            this.paymentTypeToolStripLabel.Size = new System.Drawing.Size(104, 22);
-            this.paymentTypeToolStripLabel.Text = "paymentType:";
+            this.paymentTypeToolStripLabel.Size = new System.Drawing.Size(88, 22);
+            this.paymentTypeToolStripLabel.Text = "paymentID:";
             // 
             // paymentTypeToolStripTextBox
             // 
+            this.paymentTypeToolStripTextBox.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9F);
             this.paymentTypeToolStripTextBox.Name = "paymentTypeToolStripTextBox";
             this.paymentTypeToolStripTextBox.Size = new System.Drawing.Size(100, 25);
             // 
@@ -263,7 +319,7 @@
             this.fillBy1ToolStripButton});
             this.fillBy1ToolStrip.Location = new System.Drawing.Point(3, 3);
             this.fillBy1ToolStrip.Name = "fillBy1ToolStrip";
-            this.fillBy1ToolStrip.Size = new System.Drawing.Size(238, 25);
+            this.fillBy1ToolStrip.Size = new System.Drawing.Size(269, 25);
             this.fillBy1ToolStrip.TabIndex = 1;
             this.fillBy1ToolStrip.Text = "fillBy1ToolStrip";
             // 
@@ -275,6 +331,7 @@
             // 
             // idToolStripTextBox
             // 
+            this.idToolStripTextBox.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9F);
             this.idToolStripTextBox.Name = "idToolStripTextBox";
             this.idToolStripTextBox.Size = new System.Drawing.Size(100, 25);
             // 
@@ -310,6 +367,7 @@
             // 
             // titleKeywordToolStripTextBox
             // 
+            this.titleKeywordToolStripTextBox.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9F);
             this.titleKeywordToolStripTextBox.Name = "titleKeywordToolStripTextBox";
             this.titleKeywordToolStripTextBox.Size = new System.Drawing.Size(100, 25);
             // 
@@ -340,63 +398,8 @@
             this.productDataGridView.Location = new System.Drawing.Point(0, 97);
             this.productDataGridView.Name = "productDataGridView";
             this.productDataGridView.RowTemplate.Height = 24;
-            this.productDataGridView.Size = new System.Drawing.Size(984, 263);
+            this.productDataGridView.Size = new System.Drawing.Size(978, 263);
             this.productDataGridView.TabIndex = 0;
-            // 
-            // productBindingSource
-            // 
-            this.productBindingSource.DataMember = "Product";
-            this.productBindingSource.DataSource = this.product_Search_DataSet;
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 28);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(984, 605);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // productTableAdapter
-            // 
-            this.productTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.PaymentTypeTableAdapter = null;
-            this.tableAdapterManager.ProductTableAdapter = this.productTableAdapter;
-            this.tableAdapterManager.RegionTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = desktopAPP.Product_Search_DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            // 
-            // paymentTypeTableAdapter
-            // 
-            this.paymentTypeTableAdapter.ClearBeforeFill = true;
-            // 
-            // regionTableAdapter
-            // 
-            this.regionTableAdapter.ClearBeforeFill = true;
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.DataPropertyName = "id";
-            this.dataGridViewTextBoxColumn9.HeaderText = "regionID";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn10
-            // 
-            this.dataGridViewTextBoxColumn10.DataPropertyName = "country";
-            this.dataGridViewTextBoxColumn10.HeaderText = "country";
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            // 
-            // dataGridViewTextBoxColumn11
-            // 
-            this.dataGridViewTextBoxColumn11.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn11.DataPropertyName = "location";
-            this.dataGridViewTextBoxColumn11.HeaderText = "location";
-            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -435,40 +438,40 @@
             this.dataGridViewTextBoxColumn6.HeaderText = "price";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             // 
-            // fillBy3ToolStrip
+            // productBindingSource
             // 
-            this.fillBy3ToolStrip.BackColor = System.Drawing.SystemColors.Info;
-            this.fillBy3ToolStrip.Dock = System.Windows.Forms.DockStyle.None;
-            this.fillBy3ToolStrip.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fillBy3ToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.regionIDToolStripLabel,
-            this.regionIDToolStripTextBox,
-            this.fillBy3ToolStripButton});
-            this.fillBy3ToolStrip.Location = new System.Drawing.Point(3, 28);
-            this.fillBy3ToolStrip.Name = "fillBy3ToolStrip";
-            this.fillBy3ToolStrip.Size = new System.Drawing.Size(254, 25);
-            this.fillBy3ToolStrip.TabIndex = 1;
-            this.fillBy3ToolStrip.Text = "fillBy3ToolStrip";
+            this.productBindingSource.DataMember = "Product";
+            this.productBindingSource.DataSource = this.product_Search_DataSet;
             // 
-            // regionIDToolStripLabel
+            // tabPage2
             // 
-            this.regionIDToolStripLabel.Name = "regionIDToolStripLabel";
-            this.regionIDToolStripLabel.Size = new System.Drawing.Size(80, 22);
-            this.regionIDToolStripLabel.Text = "regionID:";
+            this.tabPage2.Location = new System.Drawing.Point(4, 28);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(984, 605);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Products";
+            this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // regionIDToolStripTextBox
+            // productTableAdapter
             // 
-            this.regionIDToolStripTextBox.Name = "regionIDToolStripTextBox";
-            this.regionIDToolStripTextBox.Size = new System.Drawing.Size(100, 25);
+            this.productTableAdapter.ClearBeforeFill = true;
             // 
-            // fillBy3ToolStripButton
+            // tableAdapterManager
             // 
-            this.fillBy3ToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.fillBy3ToolStripButton.Name = "fillBy3ToolStripButton";
-            this.fillBy3ToolStripButton.Size = new System.Drawing.Size(60, 22);
-            this.fillBy3ToolStripButton.Text = "Search";
-            this.fillBy3ToolStripButton.ToolTipText = "FillBy3";
-            this.fillBy3ToolStripButton.Click += new System.EventHandler(this.fillBy3ToolStripButton_Click);
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.PaymentTypeTableAdapter = null;
+            this.tableAdapterManager.ProductTableAdapter = this.productTableAdapter;
+            this.tableAdapterManager.RegionTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = desktopAPP.Product_Search_DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // paymentTypeTableAdapter
+            // 
+            this.paymentTypeTableAdapter.ClearBeforeFill = true;
+            // 
+            // regionTableAdapter
+            // 
+            this.regionTableAdapter.ClearBeforeFill = true;
             // 
             // Form1
             // 
@@ -482,6 +485,8 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.fillBy3ToolStrip.ResumeLayout(false);
+            this.fillBy3ToolStrip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.regionDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.regionBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.product_Search_DataSet)).EndInit();
@@ -495,8 +500,6 @@
             this.fillByToolStrip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.productDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
-            this.fillBy3ToolStrip.ResumeLayout(false);
-            this.fillBy3ToolStrip.PerformLayout();
             this.ResumeLayout(false);
 
         }
