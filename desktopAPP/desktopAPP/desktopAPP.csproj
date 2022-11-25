@@ -52,9 +52,6 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Product_Search_DataSet.cs">
-      <DependentUpon>Product_Search_DataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Product_Search_DataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

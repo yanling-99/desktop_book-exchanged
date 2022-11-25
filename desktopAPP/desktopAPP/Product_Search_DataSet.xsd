@@ -4,12 +4,12 @@
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
-          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="TextbookChangedPlatformConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="TextbookChangedPlatformConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.desktopAPP.Properties.Settings.GlobalReference.Default.TextbookChangedPlatformConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="TextbookChangedPlatformConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="TextbookChangedPlatformConnectionString1 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.desktopAPP.Properties.Settings.GlobalReference.Default.TextbookChangedPlatformConnectionString1" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="PaymentTypeTableAdapter" GeneratorDataComponentClassName="PaymentTypeTableAdapter" Name="PaymentType" UserDataComponentName="PaymentTypeTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="TextbookChangedPlatformConnectionString (Settings)" DbObjectName="TextbookChangedPlatform.dbo.PaymentType" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="TextbookChangedPlatformConnectionString1 (Settings)" DbObjectName="TextbookChangedPlatform.dbo.PaymentType" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[PaymentType] WHERE (([id] = @Original_id) AND ((@IsNull_typename = 1 AND [typename] IS NULL) OR ([typename] = @Original_typename)))</CommandText>
@@ -58,7 +58,7 @@ SELECT id, typename FROM PaymentType WHERE (id = @id)</CommandText>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ProductTableAdapter" GeneratorDataComponentClassName="ProductTableAdapter" Name="Product" UserDataComponentName="ProductTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="TextbookChangedPlatformConnectionString (Settings)" DbObjectName="TextbookChangedPlatform.dbo.Product" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="TextbookChangedPlatformConnectionString1 (Settings)" DbObjectName="TextbookChangedPlatform.dbo.Product" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[Product] WHERE (([id] = @Original_id) AND ((@IsNull_paymentID = 1 AND [paymentID] IS NULL) OR ([paymentID] = @Original_paymentID)) AND ((@IsNull_countryID = 1 AND [countryID] IS NULL) OR ([countryID] = @Original_countryID)) AND ((@IsNull_condition = 1 AND [condition] IS NULL) OR ([condition] = @Original_condition)) AND ((@IsNull_price = 1 AND [price] IS NULL) OR ([price] = @Original_price)))</CommandText>
@@ -129,7 +129,18 @@ SELECT id, title, paymentID, countryID, condition, price FROM Product WHERE (id 
               <Mapping SourceColumn="price" DataSetColumn="price" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="TextbookChangedPlatformConnectionString (Settings)" DbObjectName="TextbookChangedPlatform.dbo.Product" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
+              <DbSource ConnectionRef="TextbookChangedPlatformConnectionString1 (Settings)" DbObjectName="TextbookChangedPlatform.dbo.Product" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT id, title, paymentID, countryID, condition, price FROM dbo.Product
+WHERE id LIKE @bookID</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="bookID" ColumnName="id" DataSourceName="TextbookChangedPlatform.dbo.Product" DataTypeServer="bigint" DbType="Int64" Direction="Input" ParameterName="@bookID" Precision="0" ProviderType="BigInt" Scale="0" Size="8" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="TextbookChangedPlatformConnectionString1 (Settings)" DbObjectName="TextbookChangedPlatform.dbo.Product" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy1" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy1" GeneratorSourceName="FillBy1" GetMethodModifier="Public" GetMethodName="GetDataBy1" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="FillBy1">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT id, title, paymentID, countryID, condition, price FROM dbo.Product
@@ -140,29 +151,7 @@ WHERE title LIKE @titleKeyword</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="TextbookChangedPlatformConnectionString (Settings)" DbObjectName="TextbookChangedPlatform.dbo.Product" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy1" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy1" GeneratorSourceName="FillBy1" GetMethodModifier="Public" GetMethodName="GetDataBy1" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="FillBy1">
-                <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT id, title, paymentID, countryID, condition, price FROM dbo.Product
-WHERE id LIKE @id</CommandText>
-                    <Parameters>
-                      <Parameter AllowDbNull="false" AutogeneratedName="id" ColumnName="id" DataSourceName="TextbookChangedPlatform.dbo.Product" DataTypeServer="bigint" DbType="Int64" Direction="Input" ParameterName="@id" Precision="0" ProviderType="BigInt" Scale="0" Size="8" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Current" />
-                    </Parameters>
-                  </DbCommand>
-                </SelectCommand>
-              </DbSource>
-              <DbSource ConnectionRef="TextbookChangedPlatformConnectionString (Settings)" DbObjectName="TextbookChangedPlatform.dbo.Product" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy2" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy2" GeneratorSourceName="FillBy2" GetMethodModifier="Public" GetMethodName="GetDataBy2" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="FillBy2">
-                <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT id, title, paymentID, countryID, condition, price FROM dbo.Product
-WHERE paymentID LIKE @paymentType</CommandText>
-                    <Parameters>
-                      <Parameter AllowDbNull="true" AutogeneratedName="paymentType" ColumnName="paymentID" DataSourceName="TextbookChangedPlatform.dbo.Product" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@paymentType" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="paymentID" SourceColumnNullMapping="false" SourceVersion="Current" />
-                    </Parameters>
-                  </DbCommand>
-                </SelectCommand>
-              </DbSource>
-              <DbSource ConnectionRef="TextbookChangedPlatformConnectionString (Settings)" DbObjectName="TextbookChangedPlatform.dbo.Product" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy3" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy3" GeneratorSourceName="FillBy3" GetMethodModifier="Public" GetMethodName="GetDataBy3" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="FillBy3">
+              <DbSource ConnectionRef="TextbookChangedPlatformConnectionString1 (Settings)" DbObjectName="TextbookChangedPlatform.dbo.Product" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy2" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy2" GeneratorSourceName="FillBy2" GetMethodModifier="Public" GetMethodName="GetDataBy2" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="FillBy2">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT id, title, paymentID, countryID, condition, price FROM dbo.Product
@@ -173,11 +162,22 @@ WHERE countryID LIKE @regionID</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
+              <DbSource ConnectionRef="TextbookChangedPlatformConnectionString1 (Settings)" DbObjectName="TextbookChangedPlatform.dbo.Product" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy3" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy3" GeneratorSourceName="FillBy3" GetMethodModifier="Public" GetMethodName="GetDataBy3" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="FillBy3">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT id, title, paymentID, countryID, condition, price FROM dbo.Product
+WHERE paymentID LIKE @paymentID</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="paymentID" ColumnName="paymentID" DataSourceName="TextbookChangedPlatform.dbo.Product" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@paymentID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="paymentID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
             </Sources>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="RegionTableAdapter" GeneratorDataComponentClassName="RegionTableAdapter" Name="Region" UserDataComponentName="RegionTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="TextbookChangedPlatformConnectionString (Settings)" DbObjectName="TextbookChangedPlatform.dbo.Region" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="TextbookChangedPlatformConnectionString1 (Settings)" DbObjectName="TextbookChangedPlatform.dbo.Region" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[Region] WHERE (([id] = @Original_id) AND ((@IsNull_country = 1 AND [country] IS NULL) OR ([country] = @Original_country)) AND ((@IsNull_location = 1 AND [location] IS NULL) OR ([location] = @Original_location)))</CommandText>
