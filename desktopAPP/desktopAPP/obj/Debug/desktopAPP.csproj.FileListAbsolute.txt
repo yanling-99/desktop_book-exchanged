@@ -9,3 +9,14 @@ C:\Users\E2-417\Desktop\課堂\軟工\HW 04 (2tierAPP)\desktopAPP\desktopAPP\obj
 C:\Users\E2-417\Desktop\課堂\軟工\HW 04 (2tierAPP)\desktopAPP\desktopAPP\obj\Debug\desktopAPP.csproj.CoreCompileInputs.cache
 C:\Users\E2-417\Desktop\課堂\軟工\HW 04 (2tierAPP)\desktopAPP\desktopAPP\obj\Debug\desktopAPP.exe
 C:\Users\E2-417\Desktop\課堂\軟工\HW 04 (2tierAPP)\desktopAPP\desktopAPP\obj\Debug\desktopAPP.pdb
+C:\Users\E2-417\Desktop\宇辰\desktopAPP\desktopAPP\bin\Debug\desktopAPP.exe.config
+C:\Users\E2-417\Desktop\宇辰\desktopAPP\desktopAPP\bin\Debug\desktopAPP.exe
+C:\Users\E2-417\Desktop\宇辰\desktopAPP\desktopAPP\bin\Debug\desktopAPP.pdb
+C:\Users\E2-417\Desktop\宇辰\desktopAPP\desktopAPP\obj\Debug\desktopAPP.csproj.AssemblyReference.cache
+C:\Users\E2-417\Desktop\宇辰\desktopAPP\desktopAPP\obj\Debug\desktopAPP.csproj.SuggestedBindingRedirects.cache
+C:\Users\E2-417\Desktop\宇辰\desktopAPP\desktopAPP\obj\Debug\desktopAPP.Form1.resources
+C:\Users\E2-417\Desktop\宇辰\desktopAPP\desktopAPP\obj\Debug\desktopAPP.Properties.Resources.resources
+C:\Users\E2-417\Desktop\宇辰\desktopAPP\desktopAPP\obj\Debug\desktopAPP.csproj.GenerateResource.cache
+C:\Users\E2-417\Desktop\宇辰\desktopAPP\desktopAPP\obj\Debug\desktopAPP.csproj.CoreCompileInputs.cache
+C:\Users\E2-417\Desktop\宇辰\desktopAPP\desktopAPP\obj\Debug\desktopAPP.exe
+C:\Users\E2-417\Desktop\宇辰\desktopAPP\desktopAPP\obj\Debug\desktopAPP.pdb

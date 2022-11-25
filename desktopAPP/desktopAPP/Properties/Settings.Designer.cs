@@ -33,5 +33,16 @@ namespace desktopAPP.Properties {
                 return ((string)(this["TextbookChangedPlatformConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=140.118.5.92,14433;Initial Catalog=TextbookChangedPlatform;Persist Se" +
+            "curity Info=True;User ID=B;Password=1234")]
+        public string TextbookChangedPlatformConnectionString1 {
+            get {
+                return ((string)(this["TextbookChangedPlatformConnectionString1"]));
+            }
+        }
     }
 }
