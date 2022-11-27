@@ -46,6 +46,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Edit_Product_DataSet.cs">
+      <DependentUpon>Edit_Product_DataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Edit_Product_DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Edit_Product_DataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,6 +84,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="Edit_Product_DataSet.xsc">
+      <DependentUpon>Edit_Product_DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Edit_Product_DataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Edit_Product_DataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Edit_Product_DataSet.xss">
+      <DependentUpon>Edit_Product_DataSet.xsd</DependentUpon>
+    </None>
     <None Include="Product_Search_DataSet.xsc">
       <DependentUpon>Product_Search_DataSet.xsd</DependentUpon>
     </None>
