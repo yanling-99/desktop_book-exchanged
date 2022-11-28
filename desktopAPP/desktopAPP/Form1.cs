@@ -20,6 +20,11 @@ namespace desktopAPP
 
         private void Form1_Load(object sender, EventArgs e)
         {
+
+            // TODO: 這行程式碼會將資料載入 'edit_Trans_DataSet.Transaction' 資料表。您可以視需要進行移動或移除。
+            this.transactionTA_editTrans.Fill(this.edit_Trans_DataSet.Transaction);
+            // TODO: 這行程式碼會將資料載入 'edit_User_DataSet.Users' 資料表。您可以視需要進行移動或移除。
+            this.usersTA_editUser.Fill(this.edit_User_DataSet.Users);
             // TODO: 這行程式碼會將資料載入 'edit_Product_DataSet.Transaction' 資料表。您可以視需要進行移動或移除。
             this.transactionTA_editPro.Fill(this.edit_Product_DataSet.Transaction);
             // TODO: 這行程式碼會將資料載入 'edit_Product_DataSet.Product' 資料表。您可以視需要進行移動或移除。
@@ -170,12 +175,136 @@ namespace desktopAPP
                 );
             }
 
-            
+            if (comboBox2.SelectedValue.ToString() != "")
+            {
+                productTA_editPro.UpdateQuery2(
+                    int.Parse(comboBox2.SelectedValue.ToString()),
+                    int.Parse(comboBox3.SelectedValue.ToString())
+                );
+            }
+
+            if (textBox3.Text != "")
+            {
+                productTA_editPro.UpdateQuery3(
+                    int.Parse(textBox3.Text.ToString()),
+                    int.Parse(comboBox3.SelectedValue.ToString())
+                );
+            }
+
+            if (textBox4.Text != "")
+            {
+                productTA_editPro.UpdateQuery4(
+                    double.Parse(textBox4.Text.ToString()),
+                    int.Parse(comboBox3.SelectedValue.ToString())
+                );
+            }
+
             productTA_editPro.Fill(edit_Product_DataSet.Product);
             productTA_searchPro.Fill(product_Search_DataSet.Product);
             MessageBox.Show("Successful");
             
 
         }
+
+ 
+
+        private void fillToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.usersTA_editUser.Fill(this.edit_User_DataSet.Users);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
+        }
+
+       
+        //Add Button
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int ismember = 1;
+                if (isMB_checkBox.CheckState.ToString() == "Checked")
+                    ismember = 2;
+                    
+                usersTA_editUser.InsertQuery(
+                    firstNameTextBox.Text,
+                    lastNameTextBox.Text,
+                    emailTextBox.Text,
+                    ismember
+                );
+                usersTA_editUser.Fill(edit_User_DataSet.Users);                
+                MessageBox.Show("Successful");
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+        }
+
+        //Delete Button
+        private void button3_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                usersTA_editUser.DeleteQuery(int.Parse(uidComboBox.SelectedValue.ToString()));
+                usersTA_editUser.Fill(edit_User_DataSet.Users);
+                MessageBox.Show("Successful");
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+        }
+
+        //Edit Button
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (firstNameTextBox.Text != "")
+            {
+                usersTA_editUser.UpdateQuery(
+                    firstNameTextBox.Text,
+                    int.Parse(uidComboBox.SelectedValue.ToString())
+                );
+            }
+
+            if (lastNameTextBox.Text != "")
+            {
+                usersTA_editUser.UpdateQuery1(
+                    lastNameTextBox.Text,
+                    int.Parse(uidComboBox.SelectedValue.ToString())
+                );
+            }
+
+
+            if (emailTextBox.Text != "")
+            {
+                usersTA_editUser.UpdateQuery2(
+                    emailTextBox.Text,
+                    int.Parse(uidComboBox.SelectedValue.ToString())
+                );
+            }
+
+            if (isMB_checkBox.Checked.ToString() != "")
+            {
+                int ismember = 1;
+                if (isMB_checkBox.CheckState.ToString() == "Checked")
+                    ismember = 2;
+                usersTA_editUser.UpdateQuery3(
+                    ismember,
+                    int.Parse(comboBox3.SelectedValue.ToString())
+                );
+            }
+                        
+            usersTA_editUser.Fill(edit_User_DataSet.Users);
+            MessageBox.Show("Successful");
+        }
+
+
+        
     }
 }
