@@ -46,15 +46,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EditTransDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EditTransDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Edit_Product_DataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Edit_Product_DataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Edit_Trans_DataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Edit_Trans_DataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Edit_User_DataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -94,6 +94,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="EditTransDataSet.xsc">
+      <DependentUpon>EditTransDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="EditTransDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EditTransDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="EditTransDataSet.xss">
+      <DependentUpon>EditTransDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Edit_Product_DataSet.xsc">
       <DependentUpon>Edit_Product_DataSet.xsd</DependentUpon>
     </None>
@@ -104,17 +115,6 @@
     </None>
     <None Include="Edit_Product_DataSet.xss">
       <DependentUpon>Edit_Product_DataSet.xsd</DependentUpon>
-    </None>
-    <None Include="Edit_Trans_DataSet.xsc">
-      <DependentUpon>Edit_Trans_DataSet.xsd</DependentUpon>
-    </None>
-    <None Include="Edit_Trans_DataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>Edit_Trans_DataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Edit_Trans_DataSet.xss">
-      <DependentUpon>Edit_Trans_DataSet.xsd</DependentUpon>
     </None>
     <None Include="Edit_User_DataSet.xsc">
       <DependentUpon>Edit_User_DataSet.xsd</DependentUpon>
