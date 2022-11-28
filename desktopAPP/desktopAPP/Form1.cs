@@ -64,17 +64,17 @@ namespace desktopAPP
         {
             try
             {
-                if (comboBox6.SelectedValue.ToString() == "id")
+                if (comboBox6.Text == "id")
                     this.productTA_searchPro.FillBy(this.product_Search_DataSet.Product, ((long)(System.Convert.ChangeType(priceToolStripTextBox.Text, typeof(long)))));
-                else if (comboBox6.SelectedValue.ToString() == "title")
+                else if (comboBox6.Text == "title")
                     this.productTA_searchPro.FillBy1(this.product_Search_DataSet.Product, priceToolStripTextBox.Text);
-                else if (comboBox6.SelectedValue.ToString() == "paymentID")
+                else if (comboBox6.Text == "paymentID")
                     this.productTA_searchPro.FillBy3(this.product_Search_DataSet.Product, new System.Nullable<int>(((int)(System.Convert.ChangeType(priceToolStripTextBox.Text, typeof(int))))));
-                else if (comboBox6.SelectedValue.ToString() == "countryID")
+                else if (comboBox6.Text == "countryID")
                     this.productTA_searchPro.FillBy2(this.product_Search_DataSet.Product, new System.Nullable<int>(((int)(System.Convert.ChangeType(priceToolStripTextBox.Text, typeof(int))))));
-                else if (comboBox6.SelectedValue.ToString() == "condition")
+                else if (comboBox6.Text == "condition")
                     this.productTA_searchPro.FillBy4(this.product_Search_DataSet.Product, int.Parse(priceToolStripTextBox.Text));
-                else if (comboBox6.SelectedValue.ToString() == "price")
+                else if (comboBox6.Text == "price")
                 {
                     if (radioButton2.Checked)
                         this.productTA_searchPro.FillBy5(this.product_Search_DataSet.Product, double.Parse(priceToolStripTextBox.Text));
@@ -93,33 +93,33 @@ namespace desktopAPP
         {
             if (comboBox6.Text == "price")
             {
-                radioButton2.Visible = true;
-                radioButton3.Visible = true;
-                label4.Visible = true;
+                radioButton2.Enabled = true;
+                radioButton3.Enabled = true;
+                label4.Enabled = true;
             }
             else
             {
-                radioButton2.Visible = false;
-                radioButton3.Visible = false;
-                label4.Visible = false;
+                radioButton2.Enabled = false;
+                radioButton3.Enabled = false;
+                label4.Enabled = false;
             }
         }
 
         //search trans
-        private void fillByToolStripButton1_Click(object sender, EventArgs e)
+        private void fillBy2ToolStripButton_Click_1(object sender, EventArgs e)
         {
             try
             {
-                if (comboBox7.SelectedValue.ToString() == "transID")
-                    this.transactionTA_searchTrans.FillBy(this.trans_Search_DataSet.Transaction, int.Parse(findTranTool.Text));
-                else if (comboBox7.SelectedValue.ToString() == "sellerID")
-                    this.transactionTA_searchTrans.FillBy1(this.trans_Search_DataSet.Transaction, int.Parse(findTranTool.Text));
-                else if (comboBox7.SelectedValue.ToString() == "productID")
-                    this.transactionTA_searchTrans.FillBy2(this.trans_Search_DataSet.Transaction, int.Parse(findTranTool.Text));
-                else if (comboBox7.SelectedValue.ToString() == "statusID")
-                    this.transactionTA_searchTrans.FillBy3(this.trans_Search_DataSet.Transaction, int.Parse(findTranTool.Text));
-                else if (comboBox7.SelectedValue.ToString() == "buyerID")
-                    this.transactionTA_searchTrans.FillBy4(this.trans_Search_DataSet.Transaction, int.Parse(findTranTool.Text));
+                if (comboBox7.Text == "transID")
+                    this.transactionTA_searchTrans.FillBy(this.trans_Search_DataSet.Transaction, int.Parse(fINDToolStripTextBox.Text));
+                else if (comboBox7.Text == "sellerID")
+                    this.transactionTA_searchTrans.FillBy1(this.trans_Search_DataSet.Transaction, int.Parse(fINDToolStripTextBox.Text));
+                else if (comboBox7.Text == "productID")
+                    this.transactionTA_searchTrans.FillBy2(this.trans_Search_DataSet.Transaction, new System.Nullable<long>(((long)(System.Convert.ChangeType(fINDToolStripTextBox.Text, typeof(long))))));
+                else if (comboBox7.Text == "statusID")
+                    this.transactionTA_searchTrans.FillBy3(this.trans_Search_DataSet.Transaction, int.Parse(fINDToolStripTextBox.Text));
+                else if (comboBox7.Text == "buyerID")
+                    this.transactionTA_searchTrans.FillBy4(this.trans_Search_DataSet.Transaction, int.Parse(fINDToolStripTextBox.Text));
             }
             catch (System.Exception ex)
             {
@@ -127,7 +127,7 @@ namespace desktopAPP
             }
 
         }
-
+       
         //add product
         private void Addbtn_Click(object sender, EventArgs e)
         {
@@ -177,39 +177,39 @@ namespace desktopAPP
             {
                 productTA_editPro.UpdateQuery(
                     textBox2.Text,
-                    int.Parse(comboBox3.SelectedValue.ToString())
+                    int.Parse(comboBox3.Text)
                 );
             }
 
-            if (comboBox1.SelectedValue.ToString() != "")
+            if (checkBox2.Checked)
             {
                 productTA_editPro.UpdateQuery1(
-                    int.Parse(comboBox1.SelectedValue.ToString()),
-                    int.Parse(comboBox3.SelectedValue.ToString())
+                    int.Parse(comboBox1.Text),
+                    int.Parse(comboBox3.Text)
                 );
             }
 
-            if (comboBox2.SelectedValue.ToString() != "")
+            if (checkBox3.Checked)
             {
                 productTA_editPro.UpdateQuery2(
-                    int.Parse(comboBox2.SelectedValue.ToString()),
-                    int.Parse(comboBox3.SelectedValue.ToString())
+                    int.Parse(comboBox2.Text),
+                    int.Parse(comboBox3.Text)
                 );
             }
 
             if (textBox3.Text != "")
             {
                 productTA_editPro.UpdateQuery3(
-                    int.Parse(textBox3.Text.ToString()),
-                    int.Parse(comboBox3.SelectedValue.ToString())
+                    int.Parse(textBox3.Text),
+                    int.Parse(comboBox3.Text)
                 );
             }
 
             if (textBox4.Text != "")
             {
                 productTA_editPro.UpdateQuery4(
-                    double.Parse(textBox4.Text.ToString()),
-                    int.Parse(comboBox3.SelectedValue.ToString())
+                    double.Parse(textBox4.Text),
+                    int.Parse(comboBox3.Text)
                 );
             }
             productTA_searchPro.Fill(product_Search_DataSet.Product);
@@ -231,9 +231,9 @@ namespace desktopAPP
                     ismember = 1;
                     
                 usersTA_editUser.InsertQuery(
-                    firstNameTextBox.Text,
-                    lastNameTextBox.Text,
-                    emailTextBox.Text,
+                    textBox1.Text,
+                    textBox5.Text,
+                    textBox6.Text,
                     ismember
                 );
                 usersTA_editUser.Fill(edit_User_DataSet.Users);
@@ -252,7 +252,7 @@ namespace desktopAPP
         {
             try
             {
-                usersTA_editUser.DeleteQuery(int.Parse(uidComboBox.SelectedValue.ToString()));
+                usersTA_editUser.DeleteQuery(int.Parse(uidComboBox.Text));
                 usersTA_editUser.Fill(edit_User_DataSet.Users);
                 usersTA_editTran.Fill(editTransDataSet.Users);
                 usersTA_searchTrans.Fill(trans_Search_DataSet.Users);
@@ -267,41 +267,42 @@ namespace desktopAPP
         //update user 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (firstNameTextBox.Text != "")
+            if (textBox1.Text != "")
             {
                 usersTA_editUser.UpdateQuery(
-                    firstNameTextBox.Text,
-                    int.Parse(uidComboBox.SelectedValue.ToString())
+                    textBox1.Text,
+                    int.Parse(uidComboBox.Text)
                 );
             }
 
-            if (lastNameTextBox.Text != "")
+            if (textBox5.Text != "")
             {
                 usersTA_editUser.UpdateQuery1(
-                    lastNameTextBox.Text,
-                    int.Parse(uidComboBox.SelectedValue.ToString())
+                    textBox5.Text,
+                    int.Parse(uidComboBox.Text)
                 );
             }
 
-            if (emailTextBox.Text != "")
+            if (textBox6.Text != "")
             {
                 usersTA_editUser.UpdateQuery2(
-                    emailTextBox.Text,
-                    int.Parse(uidComboBox.SelectedValue.ToString())
+                    textBox6.Text,
+                    int.Parse(uidComboBox.Text)
                 );
             }
 
-            if (isMB_checkBox.Checked.ToString() != "")
+            if (isMB_checkBox.Checked)
             {
-                int ismember;
-                if (isMB_checkBox.Checked)
-                    ismember = 2;//Y
-                else
-                    ismember = 1;//N
-
                 usersTA_editUser.UpdateQuery3(
-                    ismember,
-                    int.Parse(comboBox3.SelectedValue.ToString())
+                    2,//Yes
+                    int.Parse(comboBox3.Text)
+                );
+            }
+            else
+            {
+                usersTA_editUser.UpdateQuery3(
+                    1,//No
+                    int.Parse(comboBox3.Text)
                 );
             }
 
@@ -320,6 +321,10 @@ namespace desktopAPP
                 label16.Visible = true;
                 membershipLabel2.Visible = true;
                 label18.Visible = true;
+                checkBox1.Visible = true;
+                label19.Visible = true;
+                priceLabel3.Visible = true;
+                label20.Visible = true;
             }
             else if (radioButton4.Checked)
             {
@@ -327,29 +332,21 @@ namespace desktopAPP
                 label16.Visible = false;
                 membershipLabel2.Visible = false;
                 label18.Visible = false;
+                checkBox1.Visible = false;
+                label19.Visible = false;
+                priceLabel3.Visible = false;
+                label20.Visible = false;
             }
         }
 
         //add trans
         private void button4_Click(object sender, EventArgs e)
         {
-            int status;
-            if (radioButton4.Checked)
-                status = 1;//open
-            else
-                status = 0;//close
-
-            double price;
-            if (membershipLabel2.Text == "1")//No
-                price = double.Parse(priceLabel1.Text);
-            else//Yes
-                price = 0.9 * double.Parse(priceLabel1.Text);//10% off
-
             transactionTA_editTran.InsertQuery(
                 int.Parse(comboBox5.Text),
                 int.Parse(idComboBox.Text),
-                price,
-                status
+                double.Parse(priceLabel1.Text),
+                1
             );
 
             transactionTA_editTran.Fill(editTransDataSet.Transaction);
@@ -360,9 +357,59 @@ namespace desktopAPP
         //update trans
         private void button5_Click(object sender, EventArgs e)
         {
-            if (firstNameTextBox.Text != "")
-            {
 
+            if (checkBox4.Checked)
+            {
+                transactionTA_editTran.UpdateQuery(
+                    int.Parse(comboBox5.Text),
+                    int.Parse(transIDComboBox.Text)
+                );
+            }
+
+            if (checkBox5.Checked)
+            {//productID
+                transactionTA_editTran.UpdateQuery1(
+                    int.Parse(idComboBox.Text),
+                    int.Parse(transIDComboBox.Text)
+                );
+                //sale price
+                transactionTA_editTran.UpdateQuery2(
+                    double.Parse(priceLabel1.Text),
+                    int.Parse(transIDComboBox.Text)
+                );
+            }
+
+            if (radioButton4.Checked)//open
+            {
+                transactionTA_editTran.UpdateQuery3(
+                    1,
+                    int.Parse(transIDComboBox.Text)
+                );
+            }
+            else//close
+            {
+                transactionTA_editTran.UpdateQuery3(
+                    0,
+                    int.Parse(transIDComboBox.Text)
+                );
+            }
+
+            if (checkBox1.Checked)
+            {
+                //buyerID
+                transactionTA_editTran.UpdateQuery4(
+                    int.Parse(comboBox4.Text),
+                    int.Parse(transIDComboBox.Text)
+                );
+
+                //discount
+                if (membershipLabel2.Text == "2")//Yes,sb. ismembership
+                {
+                    transactionTA_editTran.UpdateQuery2(
+                        0.9 * double.Parse(priceLabel3.Text),//10% off
+                        int.Parse(transIDComboBox.Text)
+                    );
+                }
             }
 
             transactionTA_editTran.Fill(editTransDataSet.Transaction);
@@ -373,10 +420,78 @@ namespace desktopAPP
         //delete trans
         private void button6_Click(object sender, EventArgs e)
         {
+            transactionTA_editTran.DeleteQuery(int.Parse(transIDComboBox.Text));
             transactionTA_editTran.Fill(editTransDataSet.Transaction);
             transactionTA_searchTrans.Fill(trans_Search_DataSet.Transaction);
             MessageBox.Show("Successful");
         }
 
+        //EditPro 控制 region 欄位
+        private void checkBox3_CheckedChanged(object sender, EventArgs e)
+        {
+            if(checkBox3.Checked)
+                comboBox2.Enabled = true;
+            else
+                comboBox2.Enabled = false;
+        }
+
+        //EditPro 控制 payment 欄位
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox2.Checked)
+                comboBox1.Enabled = true;
+            else
+                comboBox1.Enabled = false;
+        }
+
+        //EditTrans 控制 buyerID 欄位
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+                comboBox4.Enabled = true;
+            else
+                comboBox4.Enabled = false;
+        }
+
+        //EditTrans 控制 sellerID 欄位
+        private void checkBox4_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox4.Checked)
+                comboBox5.Enabled = true;
+            else
+                comboBox5.Enabled = false;
+        }
+
+        //EditTrans 控制 productID 欄位
+        private void checkBox5_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox5.Checked)
+                idComboBox.Enabled = true;
+            else
+                idComboBox.Enabled = false;
+        }
+
+        //Product tab control
+        private void searchProductToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedIndex = 0;
+        }
+        private void editProductToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedIndex = 1;
+        }
+
+        private void searchTransToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedIndex = 4;
+        }
+        private void editTransToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedIndex = 3;
+        }
+        private void editUserToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedIndex = 2;
+        }
     }
 }

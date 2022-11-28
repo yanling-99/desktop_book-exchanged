@@ -3071,19 +3071,9 @@ SELECT transID, sellerID, productID, price, statusID, buyerID FROM [Transaction]
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "DELETE FROM [dbo].[Transaction] WHERE [transID] = @transID);";
+            this._commandCollection[1].CommandText = "DELETE FROM [dbo].[Transaction] WHERE [transID] = @transID;";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_transID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "transID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_sellerID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sellerID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_sellerID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sellerID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_productID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "productID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_productID", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "productID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_price", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "price", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_price", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "price", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_statusID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "statusID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_statusID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "statusID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_buyerID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "buyerID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_buyerID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "buyerID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@transID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "transID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
             this._commandCollection[2].CommandText = "INSERT INTO [dbo].[Transaction] ([sellerID], [productID], [price], [statusID])\r\n " +
@@ -3400,69 +3390,9 @@ SELECT transID, sellerID, productID, price, statusID, buyerID FROM [Transaction]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, false)]
-        public virtual int DeleteQuery(int Original_transID, global::System.Nullable<int> IsNull_sellerID, global::System.Nullable<int> Original_sellerID, global::System.Nullable<int> IsNull_productID, global::System.Nullable<long> Original_productID, global::System.Nullable<int> IsNull_price, global::System.Nullable<double> Original_price, global::System.Nullable<int> IsNull_statusID, global::System.Nullable<int> Original_statusID, global::System.Nullable<int> IsNull_buyerID, global::System.Nullable<int> Original_buyerID) {
+        public virtual int DeleteQuery(int transID) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
-            command.Parameters[0].Value = ((int)(Original_transID));
-            if ((IsNull_sellerID.HasValue == true)) {
-                command.Parameters[1].Value = ((int)(IsNull_sellerID.Value));
-            }
-            else {
-                command.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            if ((Original_sellerID.HasValue == true)) {
-                command.Parameters[2].Value = ((int)(Original_sellerID.Value));
-            }
-            else {
-                command.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            if ((IsNull_productID.HasValue == true)) {
-                command.Parameters[3].Value = ((int)(IsNull_productID.Value));
-            }
-            else {
-                command.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            if ((Original_productID.HasValue == true)) {
-                command.Parameters[4].Value = ((long)(Original_productID.Value));
-            }
-            else {
-                command.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            if ((IsNull_price.HasValue == true)) {
-                command.Parameters[5].Value = ((int)(IsNull_price.Value));
-            }
-            else {
-                command.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            if ((Original_price.HasValue == true)) {
-                command.Parameters[6].Value = ((double)(Original_price.Value));
-            }
-            else {
-                command.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            if ((IsNull_statusID.HasValue == true)) {
-                command.Parameters[7].Value = ((int)(IsNull_statusID.Value));
-            }
-            else {
-                command.Parameters[7].Value = global::System.DBNull.Value;
-            }
-            if ((Original_statusID.HasValue == true)) {
-                command.Parameters[8].Value = ((int)(Original_statusID.Value));
-            }
-            else {
-                command.Parameters[8].Value = global::System.DBNull.Value;
-            }
-            if ((IsNull_buyerID.HasValue == true)) {
-                command.Parameters[9].Value = ((int)(IsNull_buyerID.Value));
-            }
-            else {
-                command.Parameters[9].Value = global::System.DBNull.Value;
-            }
-            if ((Original_buyerID.HasValue == true)) {
-                command.Parameters[10].Value = ((int)(Original_buyerID.Value));
-            }
-            else {
-                command.Parameters[10].Value = global::System.DBNull.Value;
-            }
+            command.Parameters[0].Value = ((int)(transID));
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
