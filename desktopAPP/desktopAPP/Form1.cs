@@ -21,6 +21,10 @@ namespace desktopAPP
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // TODO: 這行程式碼會將資料載入 'order_DataSet.logCo' 資料表。您可以視需要進行移動或移除。
+            this.logCoTA_order.Fill(this.order_DataSet.logCo);
+            // TODO: 這行程式碼會將資料載入 'order_DataSet.order' 資料表。您可以視需要進行移動或移除。
+            this.orderTA_order.Fill(this.order_DataSet.order);
             // TODO: 這行程式碼會將資料載入 'editTransDataSet.Product1' 資料表。您可以視需要進行移動或移除。
             this.productCopyTA_editTran.Fill(this.editTransDataSet.Product1);
             // TODO: 這行程式碼會將資料載入 'trans_Search_DataSet.COLUMNS' 資料表。您可以視需要進行移動或移除。
@@ -133,8 +137,8 @@ namespace desktopAPP
         //add product
         private void Addbtn_Click(object sender, EventArgs e)
         {
-            if(textBox2.Text!=null && checkBox2.Checked && checkBox3.Checked && textBox3.Text!=null
-                && textBox4.Text!=null)
+            if(textBox2.Text!="" && checkBox2.Checked && checkBox3.Checked && textBox3.Text!= ""
+                && textBox4.Text!= "")
             {
                 productTA_editPro.InsertQuery(
                     textBox2.Text,
@@ -182,7 +186,7 @@ namespace desktopAPP
             {
                 //payment
                 productTA_editPro.UpdateQuery1(
-                    int.Parse(comboBox1.Text),
+                    int.Parse(comboBox1.SelectedValue.ToString()),
                     int.Parse(comboBox3.Text)
                 );
                 flag++;
@@ -229,19 +233,24 @@ namespace desktopAPP
                 flag++;
             }
 
-            productTA_searchPro.Fill(product_Search_DataSet.Product);
-            productTA_editPro.Fill(edit_Product_DataSet.Product);
-            productTA_editTran.Fill(editTransDataSet.Product);
-            productTA_searchTrans.Fill(trans_Search_DataSet.Product);
 
             if(showSucceed && flag>0)
+            {
+                productTA_searchPro.Fill(product_Search_DataSet.Product);
+                productTA_editPro.Fill(edit_Product_DataSet.Product);
+                productTA_editTran.Fill(editTransDataSet.Product);
+                productTA_searchTrans.Fill(trans_Search_DataSet.Product);
                 MessageBox.Show("Successful");
+            }
+            else
+                MessageBox.Show("Nothing to upadated");
+
         }
-     
+
         //Add user 
         private void button1_Click(object sender, EventArgs e)
         {
-            if(textBox1.Text!=null && textBox5.Text!=null && textBox6.Text!=null)
+            if(textBox1.Text!= "" && textBox5.Text!= "" && textBox6.Text!= "")
             {
                 int ismember;
                 if (isMB_checkBox.Checked)
@@ -313,7 +322,7 @@ namespace desktopAPP
                 //member  //Yes
                 usersTA_editUser.UpdateQuery3(
                     2,
-                    int.Parse(comboBox3.Text)
+                    int.Parse(uidComboBox.Text)
                 );
                 flag++;
             }
@@ -322,17 +331,19 @@ namespace desktopAPP
                 //member  //No
                 usersTA_editUser.UpdateQuery3(
                     1,
-                    int.Parse(comboBox3.Text)
+                    int.Parse(uidComboBox.Text)
                 );
                 flag++;
             }
 
-            usersTA_editUser.Fill(edit_User_DataSet.Users);
-            usersTA_editTran.Fill(editTransDataSet.Users);
-            usersTA_searchTrans.Fill(trans_Search_DataSet.Users);
 
             if(flag>0)
+            {
+                usersTA_editUser.Fill(edit_User_DataSet.Users);
+                usersTA_editTran.Fill(editTransDataSet.Users);
+                usersTA_searchTrans.Fill(trans_Search_DataSet.Users);
                 MessageBox.Show("Successful");
+            }
             else
                 MessageBox.Show("Nothing is updated");
         }
@@ -352,6 +363,9 @@ namespace desktopAPP
                 productCopyTA_editTran.Fill(editTransDataSet.Product1);
                 transactionTA_editTran.Fill(editTransDataSet.Transaction);
                 transactionTA_searchTrans.Fill(trans_Search_DataSet.Transaction);
+                orderTA_order.Fill(order_DataSet.order);
+
+
                 MessageBox.Show("Successful");
             }
             else
@@ -395,10 +409,15 @@ namespace desktopAPP
                     int.Parse(transIDComboBox.Text)
                 );
 
-                //update that buyerID is NULL
+                //如果重新open， buyerID 變成 NULL
                 transactionTA_editTran.UpdateQuery5(
                     int.Parse(transIDComboBox.Text)
                 );
+
+                //如果沒有buyer，就刪除那筆order
+                orderTA_order.DeleteQuery(int.Parse(transIDComboBox.Text));
+                orderTA_order.Fill(order_DataSet.order);
+
                 flag++;
             }
             else
@@ -408,6 +427,7 @@ namespace desktopAPP
                     0,
                     int.Parse(transIDComboBox.Text)
                 );
+
                 flag++;
             }
 
@@ -430,16 +450,44 @@ namespace desktopAPP
                         0.9 * double.Parse(priceLabel3.Text),
                         int.Parse(transIDComboBox.Text)
                     );*/
+
+                    //如果close，訂單成立->新增order
+                    orderTA_order.InsertQuery(
+                        int.Parse(transIDComboBox.Text),
+                        int.Parse(comboBox5.Text),
+                        int.Parse(idComboBox.Text),
+                        double.Parse(label23.Text),
+                        int.Parse(comboBox4.Text),
+                        DateTime.Today.ToString("d")
+                     );
                 }
+                else if(membershipLabel2.Text == "1")
+                {
+                    //如果close，訂單成立->新增order
+                    orderTA_order.InsertQuery(
+                        int.Parse(transIDComboBox.Text),
+                        int.Parse(comboBox5.Text),
+                        int.Parse(idComboBox.Text),
+                        double.Parse(priceLabel3.Text),
+                        int.Parse(comboBox4.Text),
+                        DateTime.Today.ToString("d")
+                     );
+                }
+
+                orderTA_order.Fill(order_DataSet.order);
+
                 flag++;
             }
 
-            productCopyTA_editTran.Fill(editTransDataSet.Product1);
-            transactionTA_editTran.Fill(editTransDataSet.Transaction);
-            transactionTA_searchTrans.Fill(trans_Search_DataSet.Transaction);
-           
-            if(flag>0)
+
+            if (flag>0)
+            {
+                productCopyTA_editTran.Fill(editTransDataSet.Product1);
+                transactionTA_editTran.Fill(editTransDataSet.Transaction);
+                transactionTA_searchTrans.Fill(trans_Search_DataSet.Transaction);
+                orderTA_order.Fill(order_DataSet.order);
                 MessageBox.Show("Successful");
+            }
             else
                 MessageBox.Show("Nothing is updated");
         }
@@ -448,6 +496,10 @@ namespace desktopAPP
         private void button6_Click(object sender, EventArgs e)
         {
             transactionTA_editTran.DeleteQuery(int.Parse(transIDComboBox.Text));
+            //如果刪除訂單，就刪除那筆order
+            orderTA_order.DeleteQuery(int.Parse(transIDComboBox.Text));
+            orderTA_order.Fill(order_DataSet.order);
+
             productCopyTA_editTran.Fill(editTransDataSet.Product1);
             transactionTA_editTran.Fill(editTransDataSet.Transaction);
             transactionTA_searchTrans.Fill(trans_Search_DataSet.Transaction);
@@ -512,6 +564,10 @@ namespace desktopAPP
         {
             tabControl1.SelectedIndex = 2;
         }
+        private void orderLogisticToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedIndex = 5;
+        }
 
         //Enable trans buyerID
         private void radioButton4_CheckedChanged(object sender, EventArgs e)
@@ -540,6 +596,38 @@ namespace desktopAPP
                 label22.Enabled = false;
                 label23.Enabled = false;
             }
+        }
+
+        //Enable LogID
+        private void checkBox6_CheckedChanged(object sender, EventArgs e)
+        {
+            if(checkBox6.Checked)
+                companyComboBox.Enabled = true;
+            else
+                companyComboBox.Enabled = false;
+        }
+
+
+        //Add LogID
+        private void button7_Click(object sender, EventArgs e)
+        {
+            int flag = 0;
+            if (checkBox6.Checked)
+            {
+                //sellerID
+                orderTA_order.UpdateQuery(
+                    int.Parse(companyComboBox.SelectedValue.ToString()),
+                    int.Parse(transIDComboBox1.Text)
+                );
+
+                orderTA_order.Fill(order_DataSet.order);
+                flag++;
+            }
+            if (flag > 0)
+                MessageBox.Show("Updated Successful");
+            else
+                MessageBox.Show("Nothing to Updated");
+
         }
 
     }

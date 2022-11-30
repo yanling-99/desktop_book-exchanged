@@ -38,6 +38,8 @@
             System.Windows.Forms.Label idLabel1;
             System.Windows.Forms.Label titleLabel;
             System.Windows.Forms.Label priceLabel;
+            System.Windows.Forms.Label transIDLabel1;
+            System.Windows.Forms.Label logIDLabel;
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.fillBy5ToolStrip = new System.Windows.Forms.ToolStrip();
@@ -198,6 +200,21 @@
             this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.transactionBS_searchTrans = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.companyComboBox = new System.Windows.Forms.ComboBox();
+            this.logCoBS_order = new System.Windows.Forms.BindingSource(this.components);
+            this.order_DataSet = new desktopAPP.Order_DataSet();
+            this.button7 = new System.Windows.Forms.Button();
+            this.checkBox6 = new System.Windows.Forms.CheckBox();
+            this.transIDComboBox1 = new System.Windows.Forms.ComboBox();
+            this.orderBS_order = new System.Windows.Forms.BindingSource(this.components);
+            this.orderDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn50 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn51 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn52 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn53 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn54 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn55 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn56 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.transactionBS_editTrans = new System.Windows.Forms.BindingSource(this.components);
             this.transactionTA_searchTrans = new desktopAPP.Trans_Search_DataSetTableAdapters.TransactionTableAdapter();
             this.tableAdapterManager1 = new desktopAPP.Trans_Search_DataSetTableAdapters.TableAdapterManager();
@@ -235,6 +252,10 @@
             this.dataGridViewTextBoxColumn48 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn49 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productCopyTA_editTran = new desktopAPP.EditTransDataSetTableAdapters.Product1TableAdapter();
+            this.orderTA_order = new desktopAPP.Order_DataSetTableAdapters.orderTableAdapter();
+            this.tableAdapterManager5 = new desktopAPP.Order_DataSetTableAdapters.TableAdapterManager();
+            this.logCoTA_order = new desktopAPP.Order_DataSetTableAdapters.logCoTableAdapter();
+            this.orderLogisticToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             idLabel = new System.Windows.Forms.Label();
             firstNameLabel = new System.Windows.Forms.Label();
             lastNameLabel = new System.Windows.Forms.Label();
@@ -244,6 +265,8 @@
             idLabel1 = new System.Windows.Forms.Label();
             titleLabel = new System.Windows.Forms.Label();
             priceLabel = new System.Windows.Forms.Label();
+            transIDLabel1 = new System.Windows.Forms.Label();
+            logIDLabel = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.fillBy5ToolStrip.SuspendLayout();
@@ -287,6 +310,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.productBS_searchTrans)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.transactionDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.transactionBS_searchTrans)).BeginInit();
+            this.tabPage6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.logCoBS_order)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.order_DataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.orderBS_order)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.orderDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.transactionBS_editTrans)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.transactionBS_editPro)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -373,6 +401,24 @@
             priceLabel.TabIndex = 9;
             priceLabel.Text = "product price:";
             // 
+            // transIDLabel1
+            // 
+            transIDLabel1.AutoSize = true;
+            transIDLabel1.Location = new System.Drawing.Point(250, 39);
+            transIDLabel1.Name = "transIDLabel1";
+            transIDLabel1.Size = new System.Drawing.Size(90, 19);
+            transIDLabel1.TabIndex = 1;
+            transIDLabel1.Text = "trans ID:";
+            // 
+            // logIDLabel
+            // 
+            logIDLabel.AutoSize = true;
+            logIDLabel.Location = new System.Drawing.Point(268, 85);
+            logIDLabel.Name = "logIDLabel";
+            logIDLabel.Size = new System.Drawing.Size(72, 19);
+            logIDLabel.TabIndex = 3;
+            logIDLabel.Text = "log ID:";
+            // 
             // tabControl1
             // 
             this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -437,6 +483,7 @@
             // 
             // priceToolStripTextBox
             // 
+            this.priceToolStripTextBox.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9F);
             this.priceToolStripTextBox.Name = "priceToolStripTextBox";
             this.priceToolStripTextBox.Size = new System.Drawing.Size(100, 25);
             // 
@@ -1386,7 +1433,7 @@
             this.transactionDataGridView1.Name = "transactionDataGridView1";
             this.transactionDataGridView1.ReadOnly = true;
             this.transactionDataGridView1.RowTemplate.Height = 24;
-            this.transactionDataGridView1.Size = new System.Drawing.Size(699, 271);
+            this.transactionDataGridView1.Size = new System.Drawing.Size(985, 271);
             this.transactionDataGridView1.TabIndex = 23;
             // 
             // transIDDataGridViewTextBoxColumn
@@ -1605,6 +1652,7 @@
             // 
             // fINDToolStripTextBox
             // 
+            this.fINDToolStripTextBox.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9F);
             this.fINDToolStripTextBox.Name = "fINDToolStripTextBox";
             this.fINDToolStripTextBox.Size = new System.Drawing.Size(100, 25);
             // 
@@ -1643,9 +1691,9 @@
             this.label8.BackColor = System.Drawing.Color.Bisque;
             this.label8.Location = new System.Drawing.Point(644, 58);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(117, 19);
+            this.label8.Size = new System.Drawing.Size(207, 19);
             this.label8.TabIndex = 12;
-            this.label8.Text = "Trans Status";
+            this.label8.Text = "Trans Status Reference";
             // 
             // transStatusDataGridView
             // 
@@ -1694,9 +1742,9 @@
             this.label7.BackColor = System.Drawing.Color.Bisque;
             this.label7.Location = new System.Drawing.Point(644, 291);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(153, 19);
+            this.label7.Size = new System.Drawing.Size(189, 19);
             this.label7.TabIndex = 11;
-            this.label7.Text = "User Information";
+            this.label7.Text = "User Info. Reference";
             // 
             // usersDataGridView
             // 
@@ -1772,9 +1820,9 @@
             this.label6.BackColor = System.Drawing.Color.Bisque;
             this.label6.Location = new System.Drawing.Point(37, 291);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(153, 19);
+            this.label6.Size = new System.Drawing.Size(189, 19);
             this.label6.TabIndex = 10;
-            this.label6.Text = "Book Information";
+            this.label6.Text = "Book Info. Reference";
             // 
             // productDataGridView1
             // 
@@ -1851,9 +1899,9 @@
             this.label5.BackColor = System.Drawing.Color.Bisque;
             this.label5.Location = new System.Drawing.Point(37, 58);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(216, 19);
+            this.label5.Size = new System.Drawing.Size(162, 19);
             this.label5.TabIndex = 9;
-            this.label5.Text = "Transaction Information";
+            this.label5.Text = "Transaction Info.";
             // 
             // transactionDataGridView
             // 
@@ -1930,13 +1978,156 @@
             // 
             // tabPage6
             // 
+            this.tabPage6.AutoScroll = true;
+            this.tabPage6.Controls.Add(this.companyComboBox);
+            this.tabPage6.Controls.Add(this.button7);
+            this.tabPage6.Controls.Add(this.checkBox6);
+            this.tabPage6.Controls.Add(logIDLabel);
+            this.tabPage6.Controls.Add(transIDLabel1);
+            this.tabPage6.Controls.Add(this.transIDComboBox1);
+            this.tabPage6.Controls.Add(this.orderDataGridView);
             this.tabPage6.Location = new System.Drawing.Point(4, 28);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage6.Size = new System.Drawing.Size(985, 575);
             this.tabPage6.TabIndex = 5;
-            this.tabPage6.Text = "Cart";
+            this.tabPage6.Text = "OrderLogi";
             this.tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // companyComboBox
+            // 
+            this.companyComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.logCoBS_order, "company", true));
+            this.companyComboBox.DataSource = this.logCoBS_order;
+            this.companyComboBox.DisplayMember = "company";
+            this.companyComboBox.Enabled = false;
+            this.companyComboBox.FormattingEnabled = true;
+            this.companyComboBox.Location = new System.Drawing.Point(389, 80);
+            this.companyComboBox.Name = "companyComboBox";
+            this.companyComboBox.Size = new System.Drawing.Size(249, 27);
+            this.companyComboBox.TabIndex = 18;
+            this.companyComboBox.ValueMember = "logID";
+            // 
+            // logCoBS_order
+            // 
+            this.logCoBS_order.DataMember = "logCo";
+            this.logCoBS_order.DataSource = this.order_DataSet;
+            // 
+            // order_DataSet
+            // 
+            this.order_DataSet.DataSetName = "Order_DataSet";
+            this.order_DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(356, 131);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(282, 27);
+            this.button7.TabIndex = 17;
+            this.button7.Text = "Update";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // checkBox6
+            // 
+            this.checkBox6.AutoSize = true;
+            this.checkBox6.Location = new System.Drawing.Point(356, 88);
+            this.checkBox6.Name = "checkBox6";
+            this.checkBox6.Size = new System.Drawing.Size(15, 14);
+            this.checkBox6.TabIndex = 6;
+            this.checkBox6.UseVisualStyleBackColor = true;
+            this.checkBox6.CheckedChanged += new System.EventHandler(this.checkBox6_CheckedChanged);
+            // 
+            // transIDComboBox1
+            // 
+            this.transIDComboBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.orderBS_order, "transID", true));
+            this.transIDComboBox1.DataSource = this.orderBS_order;
+            this.transIDComboBox1.DisplayMember = "transID";
+            this.transIDComboBox1.FormattingEnabled = true;
+            this.transIDComboBox1.Location = new System.Drawing.Point(356, 34);
+            this.transIDComboBox1.Name = "transIDComboBox1";
+            this.transIDComboBox1.Size = new System.Drawing.Size(282, 27);
+            this.transIDComboBox1.TabIndex = 2;
+            this.transIDComboBox1.ValueMember = "transID";
+            // 
+            // orderBS_order
+            // 
+            this.orderBS_order.DataMember = "order";
+            this.orderBS_order.DataSource = this.order_DataSet;
+            // 
+            // orderDataGridView
+            // 
+            this.orderDataGridView.AllowUserToAddRows = false;
+            this.orderDataGridView.AllowUserToDeleteRows = false;
+            this.orderDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.orderDataGridView.AutoGenerateColumns = false;
+            this.orderDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.orderDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn50,
+            this.dataGridViewTextBoxColumn51,
+            this.dataGridViewTextBoxColumn52,
+            this.dataGridViewTextBoxColumn53,
+            this.dataGridViewTextBoxColumn54,
+            this.dataGridViewTextBoxColumn55,
+            this.dataGridViewTextBoxColumn56});
+            this.orderDataGridView.DataSource = this.orderBS_order;
+            this.orderDataGridView.Location = new System.Drawing.Point(0, 199);
+            this.orderDataGridView.Name = "orderDataGridView";
+            this.orderDataGridView.ReadOnly = true;
+            this.orderDataGridView.RowTemplate.Height = 24;
+            this.orderDataGridView.Size = new System.Drawing.Size(985, 376);
+            this.orderDataGridView.TabIndex = 0;
+            // 
+            // dataGridViewTextBoxColumn50
+            // 
+            this.dataGridViewTextBoxColumn50.DataPropertyName = "transID";
+            this.dataGridViewTextBoxColumn50.HeaderText = "transID";
+            this.dataGridViewTextBoxColumn50.Name = "dataGridViewTextBoxColumn50";
+            this.dataGridViewTextBoxColumn50.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn51
+            // 
+            this.dataGridViewTextBoxColumn51.DataPropertyName = "sellerID";
+            this.dataGridViewTextBoxColumn51.HeaderText = "sellerID";
+            this.dataGridViewTextBoxColumn51.Name = "dataGridViewTextBoxColumn51";
+            this.dataGridViewTextBoxColumn51.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn52
+            // 
+            this.dataGridViewTextBoxColumn52.DataPropertyName = "productID";
+            this.dataGridViewTextBoxColumn52.HeaderText = "productID";
+            this.dataGridViewTextBoxColumn52.Name = "dataGridViewTextBoxColumn52";
+            this.dataGridViewTextBoxColumn52.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn53
+            // 
+            this.dataGridViewTextBoxColumn53.DataPropertyName = "price";
+            this.dataGridViewTextBoxColumn53.HeaderText = "price";
+            this.dataGridViewTextBoxColumn53.Name = "dataGridViewTextBoxColumn53";
+            this.dataGridViewTextBoxColumn53.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn54
+            // 
+            this.dataGridViewTextBoxColumn54.DataPropertyName = "buyerID";
+            this.dataGridViewTextBoxColumn54.HeaderText = "buyerID";
+            this.dataGridViewTextBoxColumn54.Name = "dataGridViewTextBoxColumn54";
+            this.dataGridViewTextBoxColumn54.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn55
+            // 
+            this.dataGridViewTextBoxColumn55.DataPropertyName = "date";
+            this.dataGridViewTextBoxColumn55.HeaderText = "date";
+            this.dataGridViewTextBoxColumn55.Name = "dataGridViewTextBoxColumn55";
+            this.dataGridViewTextBoxColumn55.ReadOnly = true;
+            this.dataGridViewTextBoxColumn55.Width = 180;
+            // 
+            // dataGridViewTextBoxColumn56
+            // 
+            this.dataGridViewTextBoxColumn56.DataPropertyName = "logID";
+            this.dataGridViewTextBoxColumn56.HeaderText = "logID";
+            this.dataGridViewTextBoxColumn56.Name = "dataGridViewTextBoxColumn56";
+            this.dataGridViewTextBoxColumn56.ReadOnly = true;
             // 
             // transactionBS_editTrans
             // 
@@ -2077,7 +2268,8 @@
             // 
             this.transactioonToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.searchTransToolStripMenuItem,
-            this.editTransToolStripMenuItem});
+            this.editTransToolStripMenuItem,
+            this.orderLogisticToolStripMenuItem});
             this.transactioonToolStripMenuItem.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.transactioonToolStripMenuItem.Name = "transactioonToolStripMenuItem";
             this.transactioonToolStripMenuItem.Size = new System.Drawing.Size(120, 23);
@@ -2086,14 +2278,14 @@
             // searchTransToolStripMenuItem
             // 
             this.searchTransToolStripMenuItem.Name = "searchTransToolStripMenuItem";
-            this.searchTransToolStripMenuItem.Size = new System.Drawing.Size(177, 24);
+            this.searchTransToolStripMenuItem.Size = new System.Drawing.Size(195, 24);
             this.searchTransToolStripMenuItem.Text = "SearchTrans";
             this.searchTransToolStripMenuItem.Click += new System.EventHandler(this.searchTransToolStripMenuItem_Click);
             // 
             // editTransToolStripMenuItem
             // 
             this.editTransToolStripMenuItem.Name = "editTransToolStripMenuItem";
-            this.editTransToolStripMenuItem.Size = new System.Drawing.Size(177, 24);
+            this.editTransToolStripMenuItem.Size = new System.Drawing.Size(195, 24);
             this.editTransToolStripMenuItem.Text = "EditTrans";
             this.editTransToolStripMenuItem.Click += new System.EventHandler(this.editTransToolStripMenuItem_Click);
             // 
@@ -2109,7 +2301,7 @@
             // editUserToolStripMenuItem
             // 
             this.editUserToolStripMenuItem.Name = "editUserToolStripMenuItem";
-            this.editUserToolStripMenuItem.Size = new System.Drawing.Size(150, 24);
+            this.editUserToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
             this.editUserToolStripMenuItem.Text = "EditUser";
             this.editUserToolStripMenuItem.Click += new System.EventHandler(this.editUserToolStripMenuItem_Click);
             // 
@@ -2157,6 +2349,29 @@
             // productCopyTA_editTran
             // 
             this.productCopyTA_editTran.ClearBeforeFill = true;
+            // 
+            // orderTA_order
+            // 
+            this.orderTA_order.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager5
+            // 
+            this.tableAdapterManager5.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager5.logCoTableAdapter = null;
+            this.tableAdapterManager5.orderTableAdapter = this.orderTA_order;
+            this.tableAdapterManager5.TransactionTableAdapter = null;
+            this.tableAdapterManager5.UpdateOrder = desktopAPP.Order_DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // logCoTA_order
+            // 
+            this.logCoTA_order.ClearBeforeFill = true;
+            // 
+            // orderLogisticToolStripMenuItem
+            // 
+            this.orderLogisticToolStripMenuItem.Name = "orderLogisticToolStripMenuItem";
+            this.orderLogisticToolStripMenuItem.Size = new System.Drawing.Size(195, 24);
+            this.orderLogisticToolStripMenuItem.Text = "OrderLogistic";
+            this.orderLogisticToolStripMenuItem.Click += new System.EventHandler(this.orderLogisticToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -2219,6 +2434,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.productBS_searchTrans)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.transactionDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.transactionBS_searchTrans)).EndInit();
+            this.tabPage6.ResumeLayout(false);
+            this.tabPage6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.logCoBS_order)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.order_DataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.orderBS_order)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.orderDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.transactionBS_editTrans)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.transactionBS_editPro)).EndInit();
             this.menuStrip1.ResumeLayout(false);
@@ -2436,6 +2657,25 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn44;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn45;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn46;
+        private Order_DataSet order_DataSet;
+        private System.Windows.Forms.BindingSource orderBS_order;
+        private Order_DataSetTableAdapters.orderTableAdapter orderTA_order;
+        private Order_DataSetTableAdapters.TableAdapterManager tableAdapterManager5;
+        private System.Windows.Forms.DataGridView orderDataGridView;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.CheckBox checkBox6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn50;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn51;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn52;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn53;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn54;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn55;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn56;
+        private System.Windows.Forms.BindingSource logCoBS_order;
+        private Order_DataSetTableAdapters.logCoTableAdapter logCoTA_order;
+        private System.Windows.Forms.ComboBox companyComboBox;
+        private System.Windows.Forms.ComboBox transIDComboBox1;
+        private System.Windows.Forms.ToolStripMenuItem orderLogisticToolStripMenuItem;
     }
 }
 

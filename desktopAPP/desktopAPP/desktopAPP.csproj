@@ -70,6 +70,11 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Order_DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Order_DataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Product_Search_DataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -129,6 +134,17 @@
     </None>
     <None Include="Edit_User_DataSet.xss">
       <DependentUpon>Edit_User_DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Order_DataSet.xsc">
+      <DependentUpon>Order_DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Order_DataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Order_DataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Order_DataSet.xss">
+      <DependentUpon>Order_DataSet.xsd</DependentUpon>
     </None>
     <None Include="Product_Search_DataSet.xsc">
       <DependentUpon>Product_Search_DataSet.xsd</DependentUpon>
