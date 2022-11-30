@@ -21,6 +21,8 @@ namespace desktopAPP
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // TODO: 這行程式碼會將資料載入 'editTransDataSet.Product1' 資料表。您可以視需要進行移動或移除。
+            this.productCopyTA_editTran.Fill(this.editTransDataSet.Product1);
             // TODO: 這行程式碼會將資料載入 'trans_Search_DataSet.COLUMNS' 資料表。您可以視需要進行移動或移除。
             this.cOLUMNSTA_searchTran.Fill(this.trans_Search_DataSet.COLUMNS);
             // TODO: 這行程式碼會將資料載入 'product_Search_DataSet1.COLUMNS' 資料表。您可以視需要進行移動或移除。
@@ -88,7 +90,7 @@ namespace desktopAPP
             }
         }
 
-        //hidden price of search product
+        // Enable price of search product
         private void comboBox6_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (comboBox6.Text == "price")
@@ -131,7 +133,8 @@ namespace desktopAPP
         //add product
         private void Addbtn_Click(object sender, EventArgs e)
         {
-            try
+            if(textBox2.Text!=null && checkBox2.Checked && checkBox3.Checked && textBox3.Text!=null
+                && textBox4.Text!=null)
             {
                 productTA_editPro.InsertQuery(
                     textBox2.Text,
@@ -146,83 +149,99 @@ namespace desktopAPP
                 productTA_searchTrans.Fill(trans_Search_DataSet.Product);
                 MessageBox.Show("Successful");
             }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
+            else
+                MessageBox.Show("Failed!!\nThe information must be filled in completely!");
         }
 
         //delete product
         private void Deletebtn_Click(object sender, EventArgs e)
         {
-            try
-            {
-                productTA_editPro.DeleteQuery(int.Parse(comboBox3.SelectedValue.ToString()));
-                productTA_searchPro.Fill(product_Search_DataSet.Product);
-                transactionTA_editPro.Fill(edit_Product_DataSet.Transaction);
-                productTA_editPro.Fill(edit_Product_DataSet.Product);
-                transactionTA_searchTrans.Fill(trans_Search_DataSet.Transaction);
-                MessageBox.Show("Successful");
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
+            productTA_editPro.DeleteQuery(int.Parse(comboBox3.SelectedValue.ToString()));
+            productTA_searchPro.Fill(product_Search_DataSet.Product);
+            transactionTA_editPro.Fill(edit_Product_DataSet.Transaction);
+            productTA_editPro.Fill(edit_Product_DataSet.Product);
+            transactionTA_searchTrans.Fill(trans_Search_DataSet.Transaction);
+            MessageBox.Show("Successful");
         }
 
         //update product
         private void Updatebtn_Click(object sender, EventArgs e)
         {
+            int flag = 0;
             if(textBox2.Text != "")
             {
+                //title
                 productTA_editPro.UpdateQuery(
                     textBox2.Text,
                     int.Parse(comboBox3.Text)
                 );
+                flag++;
             }
 
             if (checkBox2.Checked)
             {
+                //payment
                 productTA_editPro.UpdateQuery1(
                     int.Parse(comboBox1.Text),
                     int.Parse(comboBox3.Text)
                 );
+                flag++;
             }
 
             if (checkBox3.Checked)
             {
+                //region
                 productTA_editPro.UpdateQuery2(
                     int.Parse(comboBox2.Text),
                     int.Parse(comboBox3.Text)
                 );
+                flag++;
             }
 
-            if (textBox3.Text != "")
+            bool showSucceed = true;
+            if(textBox3.Text != "")
             {
-                productTA_editPro.UpdateQuery3(
-                    int.Parse(textBox3.Text),
-                    int.Parse(comboBox3.Text)
-                );
+                if (int.Parse(textBox3.Text)>=1 && int.Parse(textBox3.Text)<=5)
+                {
+                    //condiition
+                    productTA_editPro.UpdateQuery3(
+                        int.Parse(textBox3.Text),
+                        int.Parse(comboBox3.Text)
+                    );
+                    showSucceed = true;
+                    flag++;
+                }
+                else
+                {
+                    MessageBox.Show("Condition update failed, but other update successful. " +
+                        "Because condition value must be 1~5");
+                    showSucceed = false;
+                }
             }
-
+            
             if (textBox4.Text != "")
             {
+                //price
                 productTA_editPro.UpdateQuery4(
                     double.Parse(textBox4.Text),
                     int.Parse(comboBox3.Text)
                 );
+                flag++;
             }
+
             productTA_searchPro.Fill(product_Search_DataSet.Product);
             productTA_editPro.Fill(edit_Product_DataSet.Product);
             productTA_editTran.Fill(editTransDataSet.Product);
             productTA_searchTrans.Fill(trans_Search_DataSet.Product);
-            MessageBox.Show("Successful");
+
+            if(showSucceed && flag>0)
+                MessageBox.Show("Successful");
         }
      
         //Add user 
         private void button1_Click(object sender, EventArgs e)
         {
-            try
+            if(textBox1.Text!=null && textBox5.Text!=null && textBox6.Text!=null)
             {
                 int ismember;
                 if (isMB_checkBox.Checked)
@@ -241,160 +260,158 @@ namespace desktopAPP
                 usersTA_searchTrans.Fill(trans_Search_DataSet.Users);
                 MessageBox.Show("Successful");
             }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
+            else
+                MessageBox.Show("Failed!!\nThe information must be filled in completely!");
         }
 
         //Delete user 
         private void button3_Click(object sender, EventArgs e)
         {
-            try
-            {
-                usersTA_editUser.DeleteQuery(int.Parse(uidComboBox.Text));
-                usersTA_editUser.Fill(edit_User_DataSet.Users);
-                usersTA_editTran.Fill(editTransDataSet.Users);
-                usersTA_searchTrans.Fill(trans_Search_DataSet.Users);
-                MessageBox.Show("Successful");
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
-        }
-
-        //update user 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            if (textBox1.Text != "")
-            {
-                usersTA_editUser.UpdateQuery(
-                    textBox1.Text,
-                    int.Parse(uidComboBox.Text)
-                );
-            }
-
-            if (textBox5.Text != "")
-            {
-                usersTA_editUser.UpdateQuery1(
-                    textBox5.Text,
-                    int.Parse(uidComboBox.Text)
-                );
-            }
-
-            if (textBox6.Text != "")
-            {
-                usersTA_editUser.UpdateQuery2(
-                    textBox6.Text,
-                    int.Parse(uidComboBox.Text)
-                );
-            }
-
-            if (isMB_checkBox.Checked)
-            {
-                usersTA_editUser.UpdateQuery3(
-                    2,//Yes
-                    int.Parse(comboBox3.Text)
-                );
-            }
-            else
-            {
-                usersTA_editUser.UpdateQuery3(
-                    1,//No
-                    int.Parse(comboBox3.Text)
-                );
-            }
-
+            usersTA_editUser.DeleteQuery(int.Parse(uidComboBox.Text));
             usersTA_editUser.Fill(edit_User_DataSet.Users);
             usersTA_editTran.Fill(editTransDataSet.Users);
             usersTA_searchTrans.Fill(trans_Search_DataSet.Users);
             MessageBox.Show("Successful");
         }
 
-        //hidden trans buyerID
-        private void radioButton1_CheckedChanged_1(object sender, EventArgs e)
+        //update user 
+        private void button2_Click(object sender, EventArgs e)
         {
-            if (radioButton1.Checked)
+            int flag = 0;
+            if (textBox1.Text != "")
             {
-                comboBox4.Visible = true;
-                label16.Visible = true;
-                membershipLabel2.Visible = true;
-                label18.Visible = true;
-                checkBox1.Visible = true;
-                label19.Visible = true;
-                priceLabel3.Visible = true;
-                label20.Visible = true;
+                //first name
+                usersTA_editUser.UpdateQuery(
+                    textBox1.Text,
+                    int.Parse(uidComboBox.Text)
+                );
+                flag++;
             }
-            else if (radioButton4.Checked)
+
+            if (textBox5.Text != "")
             {
-                comboBox4.Visible = false;
-                label16.Visible = false;
-                membershipLabel2.Visible = false;
-                label18.Visible = false;
-                checkBox1.Visible = false;
-                label19.Visible = false;
-                priceLabel3.Visible = false;
-                label20.Visible = false;
+                //last name
+                usersTA_editUser.UpdateQuery1(
+                    textBox5.Text,
+                    int.Parse(uidComboBox.Text)
+                );
+                flag++;
             }
+
+            if (textBox6.Text != "")
+            {
+                //email
+                usersTA_editUser.UpdateQuery2(
+                    textBox6.Text,
+                    int.Parse(uidComboBox.Text)
+                );
+                flag++;
+            }
+
+            if (isMB_checkBox.Checked)
+            {
+                //member  //Yes
+                usersTA_editUser.UpdateQuery3(
+                    2,
+                    int.Parse(comboBox3.Text)
+                );
+                flag++;
+            }
+            else
+            {
+                //member  //No
+                usersTA_editUser.UpdateQuery3(
+                    1,
+                    int.Parse(comboBox3.Text)
+                );
+                flag++;
+            }
+
+            usersTA_editUser.Fill(edit_User_DataSet.Users);
+            usersTA_editTran.Fill(editTransDataSet.Users);
+            usersTA_searchTrans.Fill(trans_Search_DataSet.Users);
+
+            if(flag>0)
+                MessageBox.Show("Successful");
+            else
+                MessageBox.Show("Nothing is updated");
         }
 
         //add trans
         private void button4_Click(object sender, EventArgs e)
         {
-            transactionTA_editTran.InsertQuery(
-                int.Parse(comboBox5.Text),
-                int.Parse(idComboBox.Text),
-                double.Parse(priceLabel1.Text),
-                1
-            );
+            if (checkBox4.Checked && checkBox5.Checked)
+            {
+                transactionTA_editTran.InsertQuery(
+                    int.Parse(comboBox5.Text),
+                    int.Parse(idComboBox.Text),
+                    double.Parse(priceLabel2.Text),
+                    1
+                );
 
-            transactionTA_editTran.Fill(editTransDataSet.Transaction);
-            transactionTA_searchTrans.Fill(trans_Search_DataSet.Transaction);
-            MessageBox.Show("Successful");
+                productCopyTA_editTran.Fill(editTransDataSet.Product1);
+                transactionTA_editTran.Fill(editTransDataSet.Transaction);
+                transactionTA_searchTrans.Fill(trans_Search_DataSet.Transaction);
+                MessageBox.Show("Successful");
+            }
+            else
+                MessageBox.Show("Failed!!\nThe information must be filled in completely!");
         }
 
         //update trans
         private void button5_Click(object sender, EventArgs e)
         {
-
+            int flag = 0;
             if (checkBox4.Checked)
-            {
+            { 
+                //sellerID
                 transactionTA_editTran.UpdateQuery(
                     int.Parse(comboBox5.Text),
                     int.Parse(transIDComboBox.Text)
                 );
+                flag++;
             }
 
             if (checkBox5.Checked)
-            {//productID
+            {
+                //productID
                 transactionTA_editTran.UpdateQuery1(
                     int.Parse(idComboBox.Text),
                     int.Parse(transIDComboBox.Text)
                 );
                 //sale price
                 transactionTA_editTran.UpdateQuery2(
-                    double.Parse(priceLabel1.Text),
+                    double.Parse(priceLabel2.Text),
                     int.Parse(transIDComboBox.Text)
                 );
+                flag++;
             }
 
-            if (radioButton4.Checked)//open
+            if (radioButton4.Checked)
             {
+                //statusID  //open
                 transactionTA_editTran.UpdateQuery3(
                     1,
                     int.Parse(transIDComboBox.Text)
                 );
+
+                //update that buyerID is NULL
+                transactionTA_editTran.UpdateQuery5(
+                    int.Parse(transIDComboBox.Text)
+                );
+                flag++;
             }
-            else//close
+            else
             {
+                //statusID  //close
                 transactionTA_editTran.UpdateQuery3(
                     0,
                     int.Parse(transIDComboBox.Text)
                 );
+                flag++;
             }
 
-            if (checkBox1.Checked)
+            if (radioButton1.Checked)
             {
                 //buyerID
                 transactionTA_editTran.UpdateQuery4(
@@ -403,24 +420,35 @@ namespace desktopAPP
                 );
 
                 //discount
-                if (membershipLabel2.Text == "2")//Yes,sb. ismembership
-                {
-                    transactionTA_editTran.UpdateQuery2(
-                        0.9 * double.Parse(priceLabel3.Text),//10% off
+                if (membershipLabel2.Text == "2")//Yes, sb. ismembership
+                {   
+                    //show 10% off sale price
+                    label23.Text = (0.9 * double.Parse(priceLabel3.Text)).ToString("0.00");
+                    
+                    MessageBox.Show("member price: " + label23.Text);
+                    /*transactionTA_editTran.UpdateQuery2(
+                        0.9 * double.Parse(priceLabel3.Text),
                         int.Parse(transIDComboBox.Text)
-                    );
+                    );*/
                 }
+                flag++;
             }
 
+            productCopyTA_editTran.Fill(editTransDataSet.Product1);
             transactionTA_editTran.Fill(editTransDataSet.Transaction);
             transactionTA_searchTrans.Fill(trans_Search_DataSet.Transaction);
-            MessageBox.Show("Successful");
+           
+            if(flag>0)
+                MessageBox.Show("Successful");
+            else
+                MessageBox.Show("Nothing is updated");
         }
 
         //delete trans
         private void button6_Click(object sender, EventArgs e)
         {
             transactionTA_editTran.DeleteQuery(int.Parse(transIDComboBox.Text));
+            productCopyTA_editTran.Fill(editTransDataSet.Product1);
             transactionTA_editTran.Fill(editTransDataSet.Transaction);
             transactionTA_searchTrans.Fill(trans_Search_DataSet.Transaction);
             MessageBox.Show("Successful");
@@ -442,15 +470,6 @@ namespace desktopAPP
                 comboBox1.Enabled = true;
             else
                 comboBox1.Enabled = false;
-        }
-
-        //EditTrans 控制 buyerID 欄位
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checkBox1.Checked)
-                comboBox4.Enabled = true;
-            else
-                comboBox4.Enabled = false;
         }
 
         //EditTrans 控制 sellerID 欄位
@@ -493,5 +512,35 @@ namespace desktopAPP
         {
             tabControl1.SelectedIndex = 2;
         }
+
+        //Enable trans buyerID
+        private void radioButton4_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton1.Checked)
+            {
+                comboBox4.Enabled = true;
+                label16.Enabled = true;
+                membershipLabel2.Enabled = true;
+                label18.Enabled = true;
+                label19.Enabled = true;
+                priceLabel3.Enabled = true;
+                label20.Enabled = true;
+                label22.Enabled = true;
+                label23.Enabled = true;
+            }
+            else if (radioButton4.Checked)
+            {
+                comboBox4.Enabled = false;
+                label16.Enabled = false;
+                membershipLabel2.Enabled = false;
+                label18.Enabled = false;
+                label19.Enabled = false;
+                priceLabel3.Enabled = false;
+                label20.Enabled = false;
+                label22.Enabled = false;
+                label23.Enabled = false;
+            }
+        }
+
     }
 }

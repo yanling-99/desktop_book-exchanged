@@ -72,6 +72,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.label21 = new System.Windows.Forms.Label();
             this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.Updatebtn = new System.Windows.Forms.Button();
@@ -123,14 +124,17 @@
             this.dataGridViewTextBoxColumn45 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn46 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.priceLabel2 = new System.Windows.Forms.Label();
+            this.productCopyBS_editTran = new System.Windows.Forms.BindingSource(this.components);
+            this.editTransDataSet = new desktopAPP.EditTransDataSet();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.priceLabel3 = new System.Windows.Forms.Label();
             this.transactionBS_editTran = new System.Windows.Forms.BindingSource(this.components);
-            this.editTransDataSet = new desktopAPP.EditTransDataSet();
             this.label19 = new System.Windows.Forms.Label();
             this.checkBox5 = new System.Windows.Forms.CheckBox();
             this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.label18 = new System.Windows.Forms.Label();
             this.membershipLabel2 = new System.Windows.Forms.Label();
             this.buyersBS_editTran = new System.Windows.Forms.BindingSource(this.components);
@@ -153,7 +157,6 @@
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.priceLabel1 = new System.Windows.Forms.Label();
             this.transIDComboBox = new System.Windows.Forms.ComboBox();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.fillBy2ToolStrip = new System.Windows.Forms.ToolStrip();
@@ -213,10 +216,6 @@
             this.tableAdapterManager2 = new desktopAPP.Edit_Product_DataSetTableAdapters.TableAdapterManager();
             this.usersTA_editUser = new desktopAPP.Edit_User_DataSetTableAdapters.UsersTableAdapter();
             this.tableAdapterManager3 = new desktopAPP.Edit_User_DataSetTableAdapters.TableAdapterManager();
-            this.transactionTA_editTran = new desktopAPP.EditTransDataSetTableAdapters.TransactionTableAdapter();
-            this.tableAdapterManager4 = new desktopAPP.EditTransDataSetTableAdapters.TableAdapterManager();
-            this.productTA_editTran = new desktopAPP.EditTransDataSetTableAdapters.ProductTableAdapter();
-            this.usersTA_editTran = new desktopAPP.EditTransDataSetTableAdapters.UsersTableAdapter();
             this.cOLUMNSTA_searchPro = new desktopAPP.Product_Search_DataSetTableAdapters.COLUMNSTableAdapter();
             this.cOLUMNSTA_searchTran = new desktopAPP.Trans_Search_DataSetTableAdapters.COLUMNSTableAdapter();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -228,6 +227,14 @@
             this.editTransToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.transactionTA_editTran = new desktopAPP.EditTransDataSetTableAdapters.TransactionTableAdapter();
+            this.tableAdapterManager4 = new desktopAPP.EditTransDataSetTableAdapters.TableAdapterManager();
+            this.productTA_editTran = new desktopAPP.EditTransDataSetTableAdapters.ProductTableAdapter();
+            this.usersTA_editTran = new desktopAPP.EditTransDataSetTableAdapters.UsersTableAdapter();
+            this.dataGridViewTextBoxColumn47 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn48 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn49 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productCopyTA_editTran = new desktopAPP.EditTransDataSetTableAdapters.Product1TableAdapter();
             idLabel = new System.Windows.Forms.Label();
             firstNameLabel = new System.Windows.Forms.Label();
             lastNameLabel = new System.Windows.Forms.Label();
@@ -261,8 +268,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.edit_User_DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersDataGridView1)).BeginInit();
             this.tabPage4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.transactionBS_editTran)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productCopyBS_editTran)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.editTransDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.transactionBS_editTran)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.buyersBS_editTran)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.transactionDataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBS_editTran)).BeginInit();
@@ -332,7 +340,7 @@
             // transIDLabel
             // 
             transIDLabel.AutoSize = true;
-            transIDLabel.Location = new System.Drawing.Point(558, 31);
+            transIDLabel.Location = new System.Drawing.Point(518, 25);
             transIDLabel.Name = "transIDLabel";
             transIDLabel.Size = new System.Drawing.Size(90, 19);
             transIDLabel.TabIndex = 0;
@@ -359,14 +367,17 @@
             // priceLabel
             // 
             priceLabel.AutoSize = true;
-            priceLabel.Location = new System.Drawing.Point(53, 113);
+            priceLabel.Location = new System.Drawing.Point(28, 113);
             priceLabel.Name = "priceLabel";
-            priceLabel.Size = new System.Drawing.Size(108, 19);
+            priceLabel.Size = new System.Drawing.Size(135, 19);
             priceLabel.TabIndex = 9;
-            priceLabel.Text = "sale price:";
+            priceLabel.Text = "product price:";
             // 
             // tabControl1
             // 
+            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
@@ -374,11 +385,11 @@
             this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Controls.Add(this.tabPage6);
             this.tabControl1.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl1.Location = new System.Drawing.Point(0, 27);
+            this.tabControl1.Location = new System.Drawing.Point(0, 30);
             this.tabControl1.Multiline = true;
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(984, 588);
+            this.tabControl1.Size = new System.Drawing.Size(993, 607);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -398,14 +409,13 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 28);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(976, 556);
+            this.tabPage1.Size = new System.Drawing.Size(985, 575);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = " SearchProduct";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // fillBy5ToolStrip
             // 
-            this.fillBy5ToolStrip.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.fillBy5ToolStrip.BackColor = System.Drawing.Color.LightGray;
             this.fillBy5ToolStrip.Dock = System.Windows.Forms.DockStyle.None;
             this.fillBy5ToolStrip.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -413,7 +423,7 @@
             this.priceToolStripLabel,
             this.priceToolStripTextBox,
             this.fillBy5ToolStripButton});
-            this.fillBy5ToolStrip.Location = new System.Drawing.Point(537, 24);
+            this.fillBy5ToolStrip.Location = new System.Drawing.Point(537, 23);
             this.fillBy5ToolStrip.Name = "fillBy5ToolStrip";
             this.fillBy5ToolStrip.Size = new System.Drawing.Size(190, 25);
             this.fillBy5ToolStrip.TabIndex = 1;
@@ -427,7 +437,6 @@
             // 
             // priceToolStripTextBox
             // 
-            this.priceToolStripTextBox.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9F);
             this.priceToolStripTextBox.Name = "priceToolStripTextBox";
             this.priceToolStripTextBox.Size = new System.Drawing.Size(100, 25);
             // 
@@ -506,11 +515,11 @@
             this.dataGridViewTextBoxColumn10,
             this.dataGridViewTextBoxColumn11});
             this.paymentTypeDataGridView.DataSource = this.paymentTypeBS_searchPro;
-            this.paymentTypeDataGridView.Location = new System.Drawing.Point(3, 314);
+            this.paymentTypeDataGridView.Location = new System.Drawing.Point(3, 332);
             this.paymentTypeDataGridView.Name = "paymentTypeDataGridView";
             this.paymentTypeDataGridView.ReadOnly = true;
             this.paymentTypeDataGridView.RowTemplate.Height = 24;
-            this.paymentTypeDataGridView.Size = new System.Drawing.Size(330, 243);
+            this.paymentTypeDataGridView.Size = new System.Drawing.Size(330, 240);
             this.paymentTypeDataGridView.TabIndex = 8;
             // 
             // dataGridViewTextBoxColumn10
@@ -551,11 +560,11 @@
             this.dataGridViewTextBoxColumn8,
             this.dataGridViewTextBoxColumn9});
             this.regionDataGridView.DataSource = this.regionBS_searchPro;
-            this.regionDataGridView.Location = new System.Drawing.Point(339, 314);
+            this.regionDataGridView.Location = new System.Drawing.Point(339, 332);
             this.regionDataGridView.Name = "regionDataGridView";
             this.regionDataGridView.ReadOnly = true;
             this.regionDataGridView.RowTemplate.Height = 24;
-            this.regionDataGridView.Size = new System.Drawing.Size(608, 246);
+            this.regionDataGridView.Size = new System.Drawing.Size(643, 240);
             this.regionDataGridView.TabIndex = 8;
             // 
             // dataGridViewTextBoxColumn7
@@ -589,8 +598,7 @@
             // 
             this.productDataGridView.AllowUserToAddRows = false;
             this.productDataGridView.AllowUserToDeleteRows = false;
-            this.productDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.productDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.productDataGridView.AutoGenerateColumns = false;
             this.productDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -606,7 +614,7 @@
             this.productDataGridView.Name = "productDataGridView";
             this.productDataGridView.ReadOnly = true;
             this.productDataGridView.RowTemplate.Height = 24;
-            this.productDataGridView.Size = new System.Drawing.Size(947, 178);
+            this.productDataGridView.Size = new System.Drawing.Size(982, 202);
             this.productDataGridView.TabIndex = 8;
             // 
             // dataGridViewTextBoxColumn1
@@ -669,10 +677,9 @@
             // 
             // label2
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Bisque;
-            this.label2.Location = new System.Drawing.Point(379, 292);
+            this.label2.Location = new System.Drawing.Point(379, 310);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(153, 19);
             this.label2.TabIndex = 7;
@@ -683,7 +690,7 @@
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Bisque;
-            this.label1.Location = new System.Drawing.Point(44, 292);
+            this.label1.Location = new System.Drawing.Point(44, 310);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(207, 19);
             this.label1.TabIndex = 6;
@@ -692,6 +699,7 @@
             // tabPage2
             // 
             this.tabPage2.AutoScroll = true;
+            this.tabPage2.Controls.Add(this.label21);
             this.tabPage2.Controls.Add(this.checkBox3);
             this.tabPage2.Controls.Add(this.checkBox2);
             this.tabPage2.Controls.Add(this.Updatebtn);
@@ -715,10 +723,19 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 28);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(976, 556);
+            this.tabPage2.Size = new System.Drawing.Size(985, 575);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "EditProduct";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(343, 141);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(108, 19);
+            this.label21.TabIndex = 25;
+            this.label21.Text = "(Range 1~5)";
             // 
             // checkBox3
             // 
@@ -783,11 +800,11 @@
             this.dataGridViewTextBoxColumn40,
             this.dataGridViewTextBoxColumn41});
             this.regionDataGridView1.DataSource = this.regionBS_editPro;
-            this.regionDataGridView1.Location = new System.Drawing.Point(596, 39);
+            this.regionDataGridView1.Location = new System.Drawing.Point(596, 54);
             this.regionDataGridView1.Name = "regionDataGridView1";
             this.regionDataGridView1.ReadOnly = true;
             this.regionDataGridView1.RowTemplate.Height = 24;
-            this.regionDataGridView1.Size = new System.Drawing.Size(354, 187);
+            this.regionDataGridView1.Size = new System.Drawing.Size(386, 182);
             this.regionDataGridView1.TabIndex = 18;
             // 
             // dataGridViewTextBoxColumn39
@@ -839,11 +856,11 @@
             this.dataGridViewTextBoxColumn37,
             this.dataGridViewTextBoxColumn38});
             this.productDataGridView2.DataSource = this.productBS_editPro;
-            this.productDataGridView2.Location = new System.Drawing.Point(0, 254);
+            this.productDataGridView2.Location = new System.Drawing.Point(0, 264);
             this.productDataGridView2.Name = "productDataGridView2";
             this.productDataGridView2.ReadOnly = true;
             this.productDataGridView2.RowTemplate.Height = 24;
-            this.productDataGridView2.Size = new System.Drawing.Size(950, 306);
+            this.productDataGridView2.Size = new System.Drawing.Size(982, 308);
             this.productDataGridView2.TabIndex = 18;
             // 
             // dataGridViewTextBoxColumn33
@@ -1040,7 +1057,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 28);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(976, 556);
+            this.tabPage3.Size = new System.Drawing.Size(985, 575);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "EditUser";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -1144,11 +1161,11 @@
             this.dataGridViewTextBoxColumn45,
             this.dataGridViewTextBoxColumn46});
             this.usersDataGridView1.DataSource = this.usersBS_editUser;
-            this.usersDataGridView1.Location = new System.Drawing.Point(0, 208);
+            this.usersDataGridView1.Location = new System.Drawing.Point(3, 215);
             this.usersDataGridView1.Name = "usersDataGridView1";
             this.usersDataGridView1.ReadOnly = true;
             this.usersDataGridView1.RowTemplate.Height = 24;
-            this.usersDataGridView1.Size = new System.Drawing.Size(976, 348);
+            this.usersDataGridView1.Size = new System.Drawing.Size(979, 357);
             this.usersDataGridView1.TabIndex = 0;
             // 
             // dataGridViewTextBoxColumn42
@@ -1157,22 +1174,23 @@
             this.dataGridViewTextBoxColumn42.HeaderText = "uid";
             this.dataGridViewTextBoxColumn42.Name = "dataGridViewTextBoxColumn42";
             this.dataGridViewTextBoxColumn42.ReadOnly = true;
+            this.dataGridViewTextBoxColumn42.Width = 80;
             // 
             // dataGridViewTextBoxColumn43
             // 
-            this.dataGridViewTextBoxColumn43.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.dataGridViewTextBoxColumn43.DataPropertyName = "firstName";
             this.dataGridViewTextBoxColumn43.HeaderText = "firstName";
             this.dataGridViewTextBoxColumn43.Name = "dataGridViewTextBoxColumn43";
             this.dataGridViewTextBoxColumn43.ReadOnly = true;
+            this.dataGridViewTextBoxColumn43.Width = 200;
             // 
             // dataGridViewTextBoxColumn44
             // 
-            this.dataGridViewTextBoxColumn44.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.dataGridViewTextBoxColumn44.DataPropertyName = "lastName";
             this.dataGridViewTextBoxColumn44.HeaderText = "lastName";
             this.dataGridViewTextBoxColumn44.Name = "dataGridViewTextBoxColumn44";
             this.dataGridViewTextBoxColumn44.ReadOnly = true;
+            this.dataGridViewTextBoxColumn44.Width = 250;
             // 
             // dataGridViewTextBoxColumn45
             // 
@@ -1188,16 +1206,19 @@
             this.dataGridViewTextBoxColumn46.HeaderText = "membership";
             this.dataGridViewTextBoxColumn46.Name = "dataGridViewTextBoxColumn46";
             this.dataGridViewTextBoxColumn46.ReadOnly = true;
+            this.dataGridViewTextBoxColumn46.Width = 120;
             // 
             // tabPage4
             // 
             this.tabPage4.AutoScroll = true;
+            this.tabPage4.Controls.Add(this.priceLabel2);
+            this.tabPage4.Controls.Add(this.label23);
+            this.tabPage4.Controls.Add(this.label22);
             this.tabPage4.Controls.Add(this.label20);
             this.tabPage4.Controls.Add(this.priceLabel3);
             this.tabPage4.Controls.Add(this.label19);
             this.tabPage4.Controls.Add(this.checkBox5);
             this.tabPage4.Controls.Add(this.checkBox4);
-            this.tabPage4.Controls.Add(this.checkBox1);
             this.tabPage4.Controls.Add(this.label18);
             this.tabPage4.Controls.Add(this.membershipLabel2);
             this.tabPage4.Controls.Add(this.transactionDataGridView1);
@@ -1212,7 +1233,6 @@
             this.tabPage4.Controls.Add(this.button5);
             this.tabPage4.Controls.Add(this.button4);
             this.tabPage4.Controls.Add(priceLabel);
-            this.tabPage4.Controls.Add(this.priceLabel1);
             this.tabPage4.Controls.Add(titleLabel);
             this.tabPage4.Controls.Add(idLabel1);
             this.tabPage4.Controls.Add(transIDLabel);
@@ -1220,50 +1240,85 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 28);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(976, 556);
+            this.tabPage4.Size = new System.Drawing.Size(985, 575);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "EditTrans";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
-            // label20
+            // priceLabel2
             // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(26, 221);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(135, 19);
-            this.label20.TabIndex = 31;
-            this.label20.Text = "current price:";
-            this.label20.Visible = false;
+            this.priceLabel2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productCopyBS_editTran, "price", true));
+            this.priceLabel2.Location = new System.Drawing.Point(169, 114);
+            this.priceLabel2.Name = "priceLabel2";
+            this.priceLabel2.Size = new System.Drawing.Size(100, 23);
+            this.priceLabel2.TabIndex = 34;
+            this.priceLabel2.Text = "0.0";
             // 
-            // priceLabel3
+            // productCopyBS_editTran
             // 
-            this.priceLabel3.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.transactionBS_editTran, "price", true));
-            this.priceLabel3.Location = new System.Drawing.Point(169, 221);
-            this.priceLabel3.Name = "priceLabel3";
-            this.priceLabel3.Size = new System.Drawing.Size(88, 23);
-            this.priceLabel3.TabIndex = 30;
-            this.priceLabel3.Text = "0.0";
-            this.priceLabel3.Visible = false;
-            // 
-            // transactionBS_editTran
-            // 
-            this.transactionBS_editTran.DataMember = "Transaction";
-            this.transactionBS_editTran.DataSource = this.editTransDataSet;
+            this.productCopyBS_editTran.DataMember = "Product1";
+            this.productCopyBS_editTran.DataSource = this.editTransDataSet;
             // 
             // editTransDataSet
             // 
             this.editTransDataSet.DataSetName = "EditTransDataSet";
             this.editTransDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Enabled = false;
+            this.label23.Location = new System.Drawing.Point(169, 255);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(36, 19);
+            this.label23.TabIndex = 33;
+            this.label23.Text = "0.0";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Enabled = false;
+            this.label22.Location = new System.Drawing.Point(53, 255);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(108, 19);
+            this.label22.TabIndex = 32;
+            this.label22.Text = "real price:";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Enabled = false;
+            this.label20.Location = new System.Drawing.Point(44, 221);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(117, 19);
+            this.label20.TabIndex = 31;
+            this.label20.Text = "trans price:";
+            // 
+            // priceLabel3
+            // 
+            this.priceLabel3.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.transactionBS_editTran, "price", true));
+            this.priceLabel3.Enabled = false;
+            this.priceLabel3.Location = new System.Drawing.Point(169, 221);
+            this.priceLabel3.Name = "priceLabel3";
+            this.priceLabel3.Size = new System.Drawing.Size(47, 23);
+            this.priceLabel3.TabIndex = 30;
+            this.priceLabel3.Text = "0.0";
+            // 
+            // transactionBS_editTran
+            // 
+            this.transactionBS_editTran.DataMember = "Transaction";
+            this.transactionBS_editTran.DataSource = this.editTransDataSet;
+            // 
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(263, 221);
+            this.label19.BackColor = System.Drawing.Color.Lavender;
+            this.label19.Enabled = false;
+            this.label19.Location = new System.Drawing.Point(240, 255);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(405, 19);
+            this.label19.Size = new System.Drawing.Size(441, 19);
             this.label19.TabIndex = 29;
-            this.label19.Text = "(If buyer is membership, 10% off sale price)";
-            this.label19.Visible = false;
+            this.label19.Text = "(If buyer is membership(2), 10% off trans price)";
             // 
             // checkBox5
             // 
@@ -1285,36 +1340,25 @@
             this.checkBox4.UseVisualStyleBackColor = true;
             this.checkBox4.CheckedChanged += new System.EventHandler(this.checkBox4_CheckedChanged);
             // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(169, 188);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(15, 14);
-            this.checkBox1.TabIndex = 26;
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.Visible = false;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
-            // 
             // label18
             // 
             this.label18.AutoSize = true;
+            this.label18.Enabled = false;
             this.label18.Location = new System.Drawing.Point(382, 184);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(108, 19);
             this.label18.TabIndex = 25;
             this.label18.Text = "membership:";
-            this.label18.Visible = false;
             // 
             // membershipLabel2
             // 
             this.membershipLabel2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.buyersBS_editTran, "membership", true));
+            this.membershipLabel2.Enabled = false;
             this.membershipLabel2.Location = new System.Drawing.Point(494, 184);
             this.membershipLabel2.Name = "membershipLabel2";
-            this.membershipLabel2.Size = new System.Drawing.Size(100, 23);
+            this.membershipLabel2.Size = new System.Drawing.Size(39, 23);
             this.membershipLabel2.TabIndex = 24;
             this.membershipLabel2.Text = "1";
-            this.membershipLabel2.Visible = false;
             // 
             // buyersBS_editTran
             // 
@@ -1338,11 +1382,11 @@
             this.statusIDDataGridViewTextBoxColumn,
             this.buyerIDDataGridViewTextBoxColumn});
             this.transactionDataGridView1.DataSource = this.transactionBS_editTran;
-            this.transactionDataGridView1.Location = new System.Drawing.Point(0, 264);
+            this.transactionDataGridView1.Location = new System.Drawing.Point(0, 301);
             this.transactionDataGridView1.Name = "transactionDataGridView1";
             this.transactionDataGridView1.ReadOnly = true;
             this.transactionDataGridView1.RowTemplate.Height = 24;
-            this.transactionDataGridView1.Size = new System.Drawing.Size(702, 292);
+            this.transactionDataGridView1.Size = new System.Drawing.Size(699, 271);
             this.transactionDataGridView1.TabIndex = 23;
             // 
             // transIDDataGridViewTextBoxColumn
@@ -1369,7 +1413,7 @@
             // priceDataGridViewTextBoxColumn1
             // 
             this.priceDataGridViewTextBoxColumn1.DataPropertyName = "price";
-            this.priceDataGridViewTextBoxColumn1.HeaderText = "real price";
+            this.priceDataGridViewTextBoxColumn1.HeaderText = "price";
             this.priceDataGridViewTextBoxColumn1.Name = "priceDataGridViewTextBoxColumn1";
             this.priceDataGridViewTextBoxColumn1.ReadOnly = true;
             this.priceDataGridViewTextBoxColumn1.Width = 150;
@@ -1405,7 +1449,6 @@
             this.radioButton1.TabIndex = 22;
             this.radioButton1.Text = "close(0)";
             this.radioButton1.UseVisualStyleBackColor = true;
-            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged_1);
             // 
             // radioButton4
             // 
@@ -1417,17 +1460,18 @@
             this.radioButton4.TabStop = true;
             this.radioButton4.Text = "open(1)";
             this.radioButton4.UseVisualStyleBackColor = true;
+            this.radioButton4.CheckedChanged += new System.EventHandler(this.radioButton4_CheckedChanged);
             // 
             // idComboBox
             // 
             this.idComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productBS_editTran, "id", true));
-            this.idComboBox.DataSource = this.productBS_editTran;
+            this.idComboBox.DataSource = this.productCopyBS_editTran;
             this.idComboBox.DisplayMember = "id";
             this.idComboBox.Enabled = false;
             this.idComboBox.FormattingEnabled = true;
             this.idComboBox.Location = new System.Drawing.Point(210, 71);
             this.idComboBox.Name = "idComboBox";
-            this.idComboBox.Size = new System.Drawing.Size(280, 27);
+            this.idComboBox.Size = new System.Drawing.Size(236, 27);
             this.idComboBox.TabIndex = 20;
             this.idComboBox.ValueMember = "id";
             // 
@@ -1439,12 +1483,12 @@
             // label16
             // 
             this.label16.AutoSize = true;
+            this.label16.Enabled = false;
             this.label16.Location = new System.Drawing.Point(81, 184);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(81, 19);
             this.label16.TabIndex = 19;
             this.label16.Text = "buyerID:";
-            this.label16.Visible = false;
             // 
             // comboBox5
             // 
@@ -1454,7 +1498,7 @@
             this.comboBox5.FormattingEnabled = true;
             this.comboBox5.Location = new System.Drawing.Point(211, 26);
             this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(279, 27);
+            this.comboBox5.Size = new System.Drawing.Size(235, 27);
             this.comboBox5.TabIndex = 18;
             this.comboBox5.ValueMember = "id";
             // 
@@ -1469,16 +1513,15 @@
             this.comboBox4.DisplayMember = "id";
             this.comboBox4.Enabled = false;
             this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(211, 181);
+            this.comboBox4.Location = new System.Drawing.Point(169, 181);
             this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(156, 27);
+            this.comboBox4.Size = new System.Drawing.Size(198, 27);
             this.comboBox4.TabIndex = 17;
             this.comboBox4.ValueMember = "id";
-            this.comboBox4.Visible = false;
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(664, 111);
+            this.button6.Location = new System.Drawing.Point(624, 105);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(268, 27);
             this.button6.TabIndex = 16;
@@ -1488,7 +1531,7 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(664, 70);
+            this.button5.Location = new System.Drawing.Point(624, 64);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(268, 27);
             this.button5.TabIndex = 15;
@@ -1498,7 +1541,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(664, 180);
+            this.button4.Location = new System.Drawing.Point(624, 174);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(268, 27);
             this.button4.TabIndex = 14;
@@ -1506,22 +1549,13 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // priceLabel1
-            // 
-            this.priceLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productBS_editTran, "price", true));
-            this.priceLabel1.Location = new System.Drawing.Point(169, 113);
-            this.priceLabel1.Name = "priceLabel1";
-            this.priceLabel1.Size = new System.Drawing.Size(100, 23);
-            this.priceLabel1.TabIndex = 10;
-            this.priceLabel1.Text = "0.0";
-            // 
             // transIDComboBox
             // 
             this.transIDComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.transactionBS_editTran, "transID", true));
             this.transIDComboBox.DataSource = this.transactionBS_editTran;
             this.transIDComboBox.DisplayMember = "transID";
             this.transIDComboBox.FormattingEnabled = true;
-            this.transIDComboBox.Location = new System.Drawing.Point(664, 28);
+            this.transIDComboBox.Location = new System.Drawing.Point(624, 22);
             this.transIDComboBox.Name = "transIDComboBox";
             this.transIDComboBox.Size = new System.Drawing.Size(268, 27);
             this.transIDComboBox.TabIndex = 1;
@@ -1543,14 +1577,13 @@
             this.tabPage5.Location = new System.Drawing.Point(4, 28);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(976, 556);
+            this.tabPage5.Size = new System.Drawing.Size(985, 575);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "SearchTrans";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
             // fillBy2ToolStrip
             // 
-            this.fillBy2ToolStrip.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.fillBy2ToolStrip.BackColor = System.Drawing.Color.LightGray;
             this.fillBy2ToolStrip.Dock = System.Windows.Forms.DockStyle.None;
             this.fillBy2ToolStrip.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1558,7 +1591,7 @@
             this.fINDToolStripLabel,
             this.fINDToolStripTextBox,
             this.fillBy2ToolStripButton});
-            this.fillBy2ToolStrip.Location = new System.Drawing.Point(436, 20);
+            this.fillBy2ToolStrip.Location = new System.Drawing.Point(443, 18);
             this.fillBy2ToolStrip.Name = "fillBy2ToolStrip";
             this.fillBy2ToolStrip.Size = new System.Drawing.Size(190, 25);
             this.fillBy2ToolStrip.TabIndex = 1;
@@ -1572,7 +1605,6 @@
             // 
             // fINDToolStripTextBox
             // 
-            this.fINDToolStripTextBox.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9F);
             this.fINDToolStripTextBox.Name = "fINDToolStripTextBox";
             this.fINDToolStripTextBox.Size = new System.Drawing.Size(100, 25);
             // 
@@ -1632,7 +1664,7 @@
             this.transStatusDataGridView.Name = "transStatusDataGridView";
             this.transStatusDataGridView.ReadOnly = true;
             this.transStatusDataGridView.RowTemplate.Height = 24;
-            this.transStatusDataGridView.Size = new System.Drawing.Size(357, 177);
+            this.transStatusDataGridView.Size = new System.Drawing.Size(373, 180);
             this.transStatusDataGridView.TabIndex = 11;
             // 
             // dataGridViewTextBoxColumn26
@@ -1660,7 +1692,7 @@
             this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Bisque;
-            this.label7.Location = new System.Drawing.Point(644, 288);
+            this.label7.Location = new System.Drawing.Point(644, 291);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(153, 19);
             this.label7.TabIndex = 11;
@@ -1681,11 +1713,11 @@
             this.dataGridViewTextBoxColumn24,
             this.dataGridViewTextBoxColumn25});
             this.usersDataGridView.DataSource = this.usersBS_searchTrans;
-            this.usersDataGridView.Location = new System.Drawing.Point(609, 310);
+            this.usersDataGridView.Location = new System.Drawing.Point(609, 313);
             this.usersDataGridView.Name = "usersDataGridView";
             this.usersDataGridView.ReadOnly = true;
             this.usersDataGridView.RowTemplate.Height = 24;
-            this.usersDataGridView.Size = new System.Drawing.Size(361, 246);
+            this.usersDataGridView.Size = new System.Drawing.Size(372, 256);
             this.usersDataGridView.TabIndex = 10;
             // 
             // dataGridViewTextBoxColumn21
@@ -1738,7 +1770,7 @@
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Bisque;
-            this.label6.Location = new System.Drawing.Point(37, 288);
+            this.label6.Location = new System.Drawing.Point(37, 291);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(153, 19);
             this.label6.TabIndex = 10;
@@ -1759,11 +1791,11 @@
             this.conditionDataGridViewTextBoxColumn,
             this.priceDataGridViewTextBoxColumn});
             this.productDataGridView1.DataSource = this.productBS_searchTrans;
-            this.productDataGridView1.Location = new System.Drawing.Point(3, 310);
+            this.productDataGridView1.Location = new System.Drawing.Point(3, 313);
             this.productDataGridView1.Name = "productDataGridView1";
             this.productDataGridView1.ReadOnly = true;
             this.productDataGridView1.RowTemplate.Height = 24;
-            this.productDataGridView1.Size = new System.Drawing.Size(600, 246);
+            this.productDataGridView1.Size = new System.Drawing.Size(600, 256);
             this.productDataGridView1.TabIndex = 9;
             // 
             // idDataGridViewTextBoxColumn
@@ -1843,7 +1875,7 @@
             this.transactionDataGridView.Name = "transactionDataGridView";
             this.transactionDataGridView.ReadOnly = true;
             this.transactionDataGridView.RowTemplate.Height = 24;
-            this.transactionDataGridView.Size = new System.Drawing.Size(607, 177);
+            this.transactionDataGridView.Size = new System.Drawing.Size(607, 180);
             this.transactionDataGridView.TabIndex = 0;
             // 
             // dataGridViewTextBoxColumn12
@@ -1901,9 +1933,9 @@
             this.tabPage6.Location = new System.Drawing.Point(4, 28);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(976, 556);
+            this.tabPage6.Size = new System.Drawing.Size(985, 575);
             this.tabPage6.TabIndex = 5;
-            this.tabPage6.Text = "AddRating";
+            this.tabPage6.Text = "Cart";
             this.tabPage6.UseVisualStyleBackColor = true;
             // 
             // transactionBS_editTrans
@@ -1997,27 +2029,6 @@
             this.tableAdapterManager3.UpdateOrder = desktopAPP.Edit_User_DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager3.UsersTableAdapter = this.usersTA_editUser;
             // 
-            // transactionTA_editTran
-            // 
-            this.transactionTA_editTran.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager4
-            // 
-            this.tableAdapterManager4.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager4.ProductTableAdapter = this.productTA_editTran;
-            this.tableAdapterManager4.TransactionTableAdapter = this.transactionTA_editTran;
-            this.tableAdapterManager4.TransStatusTableAdapter = null;
-            this.tableAdapterManager4.UpdateOrder = desktopAPP.EditTransDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            this.tableAdapterManager4.UsersTableAdapter = this.usersTA_editTran;
-            // 
-            // productTA_editTran
-            // 
-            this.productTA_editTran.ClearBeforeFill = true;
-            // 
-            // usersTA_editTran
-            // 
-            this.usersTA_editTran.ClearBeforeFill = true;
-            // 
             // cOLUMNSTA_searchPro
             // 
             this.cOLUMNSTA_searchPro.ClearBeforeFill = true;
@@ -2034,7 +2045,7 @@
             this.usersToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(980, 27);
+            this.menuStrip1.Size = new System.Drawing.Size(993, 27);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -2075,14 +2086,14 @@
             // searchTransToolStripMenuItem
             // 
             this.searchTransToolStripMenuItem.Name = "searchTransToolStripMenuItem";
-            this.searchTransToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.searchTransToolStripMenuItem.Size = new System.Drawing.Size(177, 24);
             this.searchTransToolStripMenuItem.Text = "SearchTrans";
             this.searchTransToolStripMenuItem.Click += new System.EventHandler(this.searchTransToolStripMenuItem_Click);
             // 
             // editTransToolStripMenuItem
             // 
             this.editTransToolStripMenuItem.Name = "editTransToolStripMenuItem";
-            this.editTransToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.editTransToolStripMenuItem.Size = new System.Drawing.Size(177, 24);
             this.editTransToolStripMenuItem.Text = "EditTrans";
             this.editTransToolStripMenuItem.Click += new System.EventHandler(this.editTransToolStripMenuItem_Click);
             // 
@@ -2098,15 +2109,60 @@
             // editUserToolStripMenuItem
             // 
             this.editUserToolStripMenuItem.Name = "editUserToolStripMenuItem";
-            this.editUserToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.editUserToolStripMenuItem.Size = new System.Drawing.Size(150, 24);
             this.editUserToolStripMenuItem.Text = "EditUser";
             this.editUserToolStripMenuItem.Click += new System.EventHandler(this.editUserToolStripMenuItem_Click);
+            // 
+            // transactionTA_editTran
+            // 
+            this.transactionTA_editTran.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager4
+            // 
+            this.tableAdapterManager4.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager4.Product1TableAdapter = null;
+            this.tableAdapterManager4.ProductTableAdapter = this.productTA_editTran;
+            this.tableAdapterManager4.TransactionTableAdapter = this.transactionTA_editTran;
+            this.tableAdapterManager4.TransStatusTableAdapter = null;
+            this.tableAdapterManager4.UpdateOrder = desktopAPP.EditTransDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager4.UsersTableAdapter = this.usersTA_editTran;
+            // 
+            // productTA_editTran
+            // 
+            this.productTA_editTran.ClearBeforeFill = true;
+            // 
+            // usersTA_editTran
+            // 
+            this.usersTA_editTran.ClearBeforeFill = true;
+            // 
+            // dataGridViewTextBoxColumn47
+            // 
+            this.dataGridViewTextBoxColumn47.DataPropertyName = "transID";
+            this.dataGridViewTextBoxColumn47.HeaderText = "transID";
+            this.dataGridViewTextBoxColumn47.Name = "dataGridViewTextBoxColumn47";
+            this.dataGridViewTextBoxColumn47.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn48
+            // 
+            this.dataGridViewTextBoxColumn48.DataPropertyName = "productID";
+            this.dataGridViewTextBoxColumn48.HeaderText = "productID";
+            this.dataGridViewTextBoxColumn48.Name = "dataGridViewTextBoxColumn48";
+            // 
+            // dataGridViewTextBoxColumn49
+            // 
+            this.dataGridViewTextBoxColumn49.DataPropertyName = "price";
+            this.dataGridViewTextBoxColumn49.HeaderText = "price";
+            this.dataGridViewTextBoxColumn49.Name = "dataGridViewTextBoxColumn49";
+            // 
+            // productCopyTA_editTran
+            // 
+            this.productCopyTA_editTran.ClearBeforeFill = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(980, 616);
+            this.ClientSize = new System.Drawing.Size(993, 634);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -2142,8 +2198,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.usersDataGridView1)).EndInit();
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.transactionBS_editTran)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productCopyBS_editTran)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.editTransDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.transactionBS_editTran)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.buyersBS_editTran)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.transactionDataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBS_editTran)).EndInit();
@@ -2240,7 +2297,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.ComboBox comboBox1;
@@ -2290,11 +2346,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.BindingSource transactionBS_editTrans;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn42;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn43;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn44;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn45;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn46;
         private EditTransDataSet editTransDataSet;
         private System.Windows.Forms.BindingSource transactionBS_editTran;
         private EditTransDataSetTableAdapters.TransactionTableAdapter transactionTA_editTran;
@@ -2304,7 +2355,6 @@
         private System.Windows.Forms.BindingSource buyersBS_editTran;
         private System.Windows.Forms.BindingSource sellerBS_editTran;
         private EditTransDataSetTableAdapters.ProductTableAdapter productTA_editTran;
-        private System.Windows.Forms.Label priceLabel1;
         private System.Windows.Forms.BindingSource productBS_editTran;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button4;
@@ -2334,7 +2384,6 @@
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.CheckBox checkBox5;
         private System.Windows.Forms.CheckBox checkBox4;
         private System.Windows.Forms.Label label19;
@@ -2355,12 +2404,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn transIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sellerIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn productIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn statusIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn buyerIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.Label priceLabel3;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.MenuStrip menuStrip1;
@@ -2372,6 +2415,27 @@
         private System.Windows.Forms.ToolStripMenuItem editTransToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem usersToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editUserToolStripMenuItem;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.DataGridViewTextBoxColumn transIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sellerIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn productIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn statusIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn buyerIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn47;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn48;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn49;
+        private System.Windows.Forms.BindingSource productCopyBS_editTran;
+        private EditTransDataSetTableAdapters.Product1TableAdapter productCopyTA_editTran;
+        private System.Windows.Forms.Label priceLabel2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn42;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn43;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn44;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn45;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn46;
     }
 }
 
