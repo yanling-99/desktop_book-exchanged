@@ -31,22 +31,23 @@
             this.components = new System.ComponentModel.Container();
             this.cancel = new System.Windows.Forms.Button();
             this.idTB = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.SendutBT = new System.Windows.Forms.Button();
             this.staff_DataSet = new desktopAPP.Staff_DataSet();
             this.staffBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.staffTA = new desktopAPP.Staff_DataSetTableAdapters.staffTableAdapter();
             this.tableAdapterManager = new desktopAPP.Staff_DataSetTableAdapters.TableAdapterManager();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.staff_DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.staffBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // cancel
             // 
+            this.cancel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cancel.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cancel.Location = new System.Drawing.Point(129, 234);
+            this.cancel.Location = new System.Drawing.Point(232, 207);
             this.cancel.Name = "cancel";
-            this.cancel.Size = new System.Drawing.Size(233, 34);
+            this.cancel.Size = new System.Drawing.Size(96, 34);
             this.cancel.TabIndex = 1;
             this.cancel.Text = "Cancel";
             this.cancel.UseVisualStyleBackColor = true;
@@ -55,27 +56,22 @@
             // idTB
             // 
             this.idTB.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.idTB.Location = new System.Drawing.Point(129, 116);
+            this.idTB.ForeColor = System.Drawing.Color.DarkGray;
+            this.idTB.Location = new System.Drawing.Point(116, 153);
             this.idTB.Name = "idTB";
-            this.idTB.Size = new System.Drawing.Size(233, 25);
+            this.idTB.Size = new System.Drawing.Size(241, 25);
             this.idTB.TabIndex = 8;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(83, 119);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(40, 22);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "ID:";
+            this.idTB.Text = "Please enter yout staff ID";
+            this.idTB.Enter += new System.EventHandler(this.idTB_Enter);
+            this.idTB.Leave += new System.EventHandler(this.idTB_Leave);
             // 
             // SendutBT
             // 
+            this.SendutBT.Cursor = System.Windows.Forms.Cursors.Hand;
             this.SendutBT.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SendutBT.Location = new System.Drawing.Point(129, 180);
+            this.SendutBT.Location = new System.Drawing.Point(133, 207);
             this.SendutBT.Name = "SendutBT";
-            this.SendutBT.Size = new System.Drawing.Size(233, 36);
+            this.SendutBT.Size = new System.Drawing.Size(93, 34);
             this.SendutBT.TabIndex = 6;
             this.SendutBT.Text = "Log in";
             this.SendutBT.UseVisualStyleBackColor = true;
@@ -101,13 +97,24 @@
             this.tableAdapterManager.staffTableAdapter = this.staffTA;
             this.tableAdapterManager.UpdateOrder = desktopAPP.Staff_DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("微軟正黑體", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label2.Location = new System.Drawing.Point(179, 24);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(117, 37);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "OTEA+";
+            // 
             // log_in
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.ClientSize = new System.Drawing.Size(477, 413);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.idTB);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.SendutBT);
             this.Controls.Add(this.cancel);
             this.Name = "log_in";
@@ -125,11 +132,11 @@
 
         private System.Windows.Forms.Button cancel;
         private System.Windows.Forms.TextBox idTB;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button SendutBT;
         private Staff_DataSet staff_DataSet;
         private System.Windows.Forms.BindingSource staffBindingSource;
         private Staff_DataSetTableAdapters.staffTableAdapter staffTA;
         private Staff_DataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private System.Windows.Forms.Label label2;
     }
 }

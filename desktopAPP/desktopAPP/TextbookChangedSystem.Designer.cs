@@ -257,6 +257,7 @@
             this.tableAdapterManager5 = new desktopAPP.Order_DataSetTableAdapters.TableAdapterManager();
             this.logCoTA_order = new desktopAPP.Order_DataSetTableAdapters.logCoTableAdapter();
             this.homeBT = new System.Windows.Forms.Button();
+            this.label24 = new System.Windows.Forms.Label();
             idLabel = new System.Windows.Forms.Label();
             firstNameLabel = new System.Windows.Forms.Label();
             lastNameLabel = new System.Windows.Forms.Label();
@@ -486,7 +487,6 @@
             // 
             // priceToolStripTextBox
             // 
-            this.priceToolStripTextBox.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9F);
             this.priceToolStripTextBox.Name = "priceToolStripTextBox";
             this.priceToolStripTextBox.Size = new System.Drawing.Size(100, 25);
             // 
@@ -565,11 +565,11 @@
             this.dataGridViewTextBoxColumn10,
             this.dataGridViewTextBoxColumn11});
             this.paymentTypeDataGridView.DataSource = this.paymentTypeBS_searchPro;
-            this.paymentTypeDataGridView.Location = new System.Drawing.Point(3, 370);
+            this.paymentTypeDataGridView.Location = new System.Drawing.Point(0, 370);
             this.paymentTypeDataGridView.Name = "paymentTypeDataGridView";
             this.paymentTypeDataGridView.ReadOnly = true;
             this.paymentTypeDataGridView.RowTemplate.Height = 24;
-            this.paymentTypeDataGridView.Size = new System.Drawing.Size(330, 186);
+            this.paymentTypeDataGridView.Size = new System.Drawing.Size(333, 182);
             this.paymentTypeDataGridView.TabIndex = 8;
             // 
             // dataGridViewTextBoxColumn10
@@ -614,7 +614,7 @@
             this.regionDataGridView.Name = "regionDataGridView";
             this.regionDataGridView.ReadOnly = true;
             this.regionDataGridView.RowTemplate.Height = 24;
-            this.regionDataGridView.Size = new System.Drawing.Size(865, 186);
+            this.regionDataGridView.Size = new System.Drawing.Size(865, 182);
             this.regionDataGridView.TabIndex = 8;
             // 
             // dataGridViewTextBoxColumn7
@@ -811,6 +811,7 @@
             // 
             // Updatebtn
             // 
+            this.Updatebtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Updatebtn.Location = new System.Drawing.Point(372, 68);
             this.Updatebtn.Name = "Updatebtn";
             this.Updatebtn.Size = new System.Drawing.Size(199, 27);
@@ -821,6 +822,7 @@
             // 
             // Deletebtn
             // 
+            this.Deletebtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Deletebtn.Location = new System.Drawing.Point(372, 101);
             this.Deletebtn.Name = "Deletebtn";
             this.Deletebtn.Size = new System.Drawing.Size(199, 27);
@@ -831,6 +833,7 @@
             // 
             // Addbtn
             // 
+            this.Addbtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Addbtn.Location = new System.Drawing.Point(128, 209);
             this.Addbtn.Name = "Addbtn";
             this.Addbtn.Size = new System.Drawing.Size(205, 27);
@@ -912,7 +915,7 @@
             this.productDataGridView2.Name = "productDataGridView2";
             this.productDataGridView2.ReadOnly = true;
             this.productDataGridView2.RowTemplate.Height = 24;
-            this.productDataGridView2.Size = new System.Drawing.Size(1204, 292);
+            this.productDataGridView2.Size = new System.Drawing.Size(1204, 288);
             this.productDataGridView2.TabIndex = 18;
             // 
             // dataGridViewTextBoxColumn33
@@ -1137,6 +1140,7 @@
             // 
             // button3
             // 
+            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button3.Location = new System.Drawing.Point(578, 86);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(342, 27);
@@ -1147,6 +1151,7 @@
             // 
             // button2
             // 
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button2.Location = new System.Drawing.Point(578, 54);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(342, 27);
@@ -1157,6 +1162,7 @@
             // 
             // button1
             // 
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.Location = new System.Drawing.Point(139, 158);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(342, 27);
@@ -1217,7 +1223,7 @@
             this.usersDataGridView1.Name = "usersDataGridView1";
             this.usersDataGridView1.ReadOnly = true;
             this.usersDataGridView1.RowTemplate.Height = 24;
-            this.usersDataGridView1.Size = new System.Drawing.Size(1204, 341);
+            this.usersDataGridView1.Size = new System.Drawing.Size(1204, 337);
             this.usersDataGridView1.TabIndex = 0;
             // 
             // dataGridViewTextBoxColumn42
@@ -1438,7 +1444,7 @@
             this.transactionDataGridView1.Name = "transactionDataGridView1";
             this.transactionDataGridView1.ReadOnly = true;
             this.transactionDataGridView1.RowTemplate.Height = 24;
-            this.transactionDataGridView1.Size = new System.Drawing.Size(1204, 300);
+            this.transactionDataGridView1.Size = new System.Drawing.Size(1204, 299);
             this.transactionDataGridView1.TabIndex = 23;
             // 
             // transIDDataGridViewTextBoxColumn
@@ -1573,6 +1579,7 @@
             // 
             // button6
             // 
+            this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button6.Location = new System.Drawing.Point(829, 26);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(122, 27);
@@ -1583,6 +1590,7 @@
             // 
             // button5
             // 
+            this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button5.Location = new System.Drawing.Point(612, 198);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(339, 27);
@@ -1593,6 +1601,7 @@
             // 
             // button4
             // 
+            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button4.Location = new System.Drawing.Point(210, 198);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(236, 27);
@@ -1657,7 +1666,6 @@
             // 
             // fINDToolStripTextBox
             // 
-            this.fINDToolStripTextBox.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9F);
             this.fINDToolStripTextBox.Name = "fINDToolStripTextBox";
             this.fINDToolStripTextBox.Size = new System.Drawing.Size(100, 25);
             // 
@@ -1996,7 +2004,7 @@
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage6.Size = new System.Drawing.Size(1204, 552);
             this.tabPage6.TabIndex = 5;
-            this.tabPage6.Text = "OrderLogi";
+            this.tabPage6.Text = "OrderManagement";
             this.tabPage6.UseVisualStyleBackColor = true;
             // 
             // companyComboBox
@@ -2026,6 +2034,7 @@
             // button7
             // 
             this.button7.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.button7.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button7.Location = new System.Drawing.Point(428, 136);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(282, 27);
@@ -2085,7 +2094,7 @@
             this.orderDataGridView.Name = "orderDataGridView";
             this.orderDataGridView.ReadOnly = true;
             this.orderDataGridView.RowTemplate.Height = 24;
-            this.orderDataGridView.Size = new System.Drawing.Size(1204, 357);
+            this.orderDataGridView.Size = new System.Drawing.Size(1204, 353);
             this.orderDataGridView.TabIndex = 0;
             // 
             // dataGridViewTextBoxColumn50
@@ -2384,20 +2393,33 @@
             // 
             // homeBT
             // 
+            this.homeBT.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.homeBT.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.homeBT.Location = new System.Drawing.Point(289, 1);
+            this.homeBT.Location = new System.Drawing.Point(1117, 0);
             this.homeBT.Name = "homeBT";
-            this.homeBT.Size = new System.Drawing.Size(88, 26);
+            this.homeBT.Size = new System.Drawing.Size(91, 27);
             this.homeBT.TabIndex = 2;
             this.homeBT.Text = "Log out";
             this.homeBT.UseVisualStyleBackColor = true;
             this.homeBT.Click += new System.EventHandler(this.homeBT_Click);
+            // 
+            // label24
+            // 
+            this.label24.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.Location = new System.Drawing.Point(980, 6);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(72, 19);
+            this.label24.TabIndex = 3;
+            this.label24.Text = "label24";
             // 
             // TextbookChangedSystem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1212, 611);
+            this.Controls.Add(this.label24);
             this.Controls.Add(this.homeBT);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.menuStrip1);
@@ -2698,6 +2720,7 @@
         private System.Windows.Forms.ComboBox transIDComboBox1;
         private System.Windows.Forms.ToolStripMenuItem orderLogisticToolStripMenuItem;
         private System.Windows.Forms.Button homeBT;
+        private System.Windows.Forms.Label label24;
     }
 }
 

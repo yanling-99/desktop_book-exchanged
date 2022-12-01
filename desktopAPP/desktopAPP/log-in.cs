@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace desktopAPP
 {
@@ -49,7 +50,7 @@ namespace desktopAPP
                         this.Close();
                         TextbookChangedSystem booksystem = new TextbookChangedSystem();
                         booksystem.Show();
-                        
+                        booksystem.setHiLabel("Hi, "+staff_DataSet.staff.Rows[i][1].ToString());
                     }
                 }
             }
@@ -57,5 +58,28 @@ namespace desktopAPP
                 MessageBox.Show("Please enter your ID!", "Warning"
                     , MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
+
+        bool idTBHasText = false;
+        private void idTB_Enter(object sender, EventArgs e)
+        {
+            if (idTBHasText == false)
+                idTB.Text = "";
+
+            idTB.ForeColor = Color.Black;
+            idTB.PasswordChar = '*';
+        }
+        private void idTB_Leave(object sender, EventArgs e)
+        {
+            if (idTB.Text == "")
+            {
+                idTB.Text = "e-mail";
+                idTB.ForeColor = Color.DarkGray;
+                idTBHasText = false;
+            }
+            else
+                idTBHasText = true;
+        }
+
     }
+
 }
