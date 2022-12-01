@@ -25,7 +25,6 @@ C:\Users\E2-417\Desktop\desktopAPP\desktopAPP\bin\Debug\desktopAPP.exe
 C:\Users\E2-417\Desktop\desktopAPP\desktopAPP\bin\Debug\desktopAPP.pdb
 C:\Users\E2-417\Desktop\desktopAPP\desktopAPP\obj\Debug\desktopAPP.csproj.AssemblyReference.cache
 C:\Users\E2-417\Desktop\desktopAPP\desktopAPP\obj\Debug\desktopAPP.csproj.SuggestedBindingRedirects.cache
-C:\Users\E2-417\Desktop\desktopAPP\desktopAPP\obj\Debug\desktopAPP.Form1.resources
 C:\Users\E2-417\Desktop\desktopAPP\desktopAPP\obj\Debug\desktopAPP.Properties.Resources.resources
 C:\Users\E2-417\Desktop\desktopAPP\desktopAPP\obj\Debug\desktopAPP.csproj.GenerateResource.cache
 C:\Users\E2-417\Desktop\desktopAPP\desktopAPP\obj\Debug\desktopAPP.csproj.CoreCompileInputs.cache
@@ -64,3 +63,7 @@ C:\Users\E2-417\Desktop\desktopAPP (11.30.1820)\desktopAPP\obj\Debug\desktopAPP.
 C:\Users\E2-417\Desktop\desktopAPP (11.30.1820)\desktopAPP\obj\Debug\desktopAPP.csproj.CoreCompileInputs.cache
 C:\Users\E2-417\Desktop\desktopAPP (11.30.1820)\desktopAPP\obj\Debug\desktopAPP.exe
 C:\Users\E2-417\Desktop\desktopAPP (11.30.1820)\desktopAPP\obj\Debug\desktopAPP.pdb
+C:\Users\E2-417\Desktop\desktopAPP\desktopAPP\obj\Debug\desktopAPP.Home.resources
+C:\Users\E2-417\Desktop\desktopAPP\desktopAPP\obj\Debug\desktopAPP.log_in.resources
+C:\Users\E2-417\Desktop\desktopAPP\desktopAPP\obj\Debug\desktopAPP.sign_up.resources
+C:\Users\E2-417\Desktop\desktopAPP\desktopAPP\obj\Debug\desktopAPP.TextbookChangedSystem.resources
